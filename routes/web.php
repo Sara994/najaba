@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/course', 'CourseController@create');
+Route::get('/course/create', function(){ return view('course/create');});
+Route::post('/course/create', 'CourseController@create');
