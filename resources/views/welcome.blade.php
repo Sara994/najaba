@@ -13,10 +13,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Najabah Project
                 </div>
 
-                
+
             </div>
         </div>
 @extends('footer')

@@ -65,7 +65,7 @@
         </style>
     </head>
     <body>
-        <div style="height:50px;background-color:cornflowerblue"></div>
+        <div style="height:50px;background-color:cornflowerblue">Header</div>
     
         @yield('content')
 
