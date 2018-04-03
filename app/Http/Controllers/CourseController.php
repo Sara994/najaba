@@ -11,10 +11,8 @@ class CourseController extends Controller{
             'name' => $request->name,
             'teacherName' => $request->teacher_name
         ]);
-
-
         
-        return view("course",$courses);
+        return view("course");
     }
     function list(){
         $courses = Course::list();
