@@ -9,13 +9,37 @@ class CourseController extends Controller{
     function create(Request $request ){
         Course::create([
             'name' => $request->name,
-            'teacherName' => $request->teacher_name
+            'teacher_name' => $request->teacher_name
         ]);
 
-        return view("course",["name"=>"Hello"]);
+        $courses = Course::all();
+        return view("course",["courses"=> $courses]);
     }
+
+    function view(array $params){
+        $courseId = $params['id'];
+        $course = Course::find($courseId);
+        return view('course/view',['course'=>$course]);
+    }
+
     function list(){
         $courses = Course::list();
         return view("list_courses");
+    }
+
+    function delete(){
+
+    }
+
+    function edit(){
+
+    }
+
+    function assignTrainer(){
+
+    }
+
+    function join(Request $request){
+
     }
 }

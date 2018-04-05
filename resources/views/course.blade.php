@@ -1,7 +1,9 @@
-@extends('header');
+@extends('layouts.app')
 
-        <div class="flex-center position-ref full-height">
-            Testing .... 1 2 3
+@section('content')
+    @foreach($courses as $course)
+        <div class="flex-center position-ref">
+            {{$course->name}}
         </div>
-
-@extends('footer')
+    @endforeach
+@endsection
