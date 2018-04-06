@@ -13,7 +13,17 @@ class CreatComment extends Migration
      */
     public function up()
     {
-        //
+          Schema::create('comment', function (Blueprint $table) {
+              $table->increments('id');
+              $table->string('comment');
+              $b->unsignedInteger('course_id')->nullable();
+              $b->unsignedInteger('trainer_id');
+              $b->unsignedInteger('student_id');
+
+              $b->foreign('course_id')->references('id')->on('course');
+              $b->foreign('trainer_id')->references('id')->on('users');
+              $b->foreign('student_id')->references('id')->on('users');
+              $b->timestamps();
     }
 
     /**
@@ -23,6 +33,6 @@ class CreatComment extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('comment');
     }
 }
