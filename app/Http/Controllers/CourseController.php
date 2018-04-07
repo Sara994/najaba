@@ -16,10 +16,10 @@ class CourseController extends Controller{
         return view("course",["courses"=> $courses]);
     }
 
-    function view(array $params){
-        $courseId = $params['id'];
+    function view($courseId){
         $course = Course::find($courseId);
-        return view('course/view',['course'=>$course]);
+        
+        return view('course/view',$course);
     }
 
     function list(){
