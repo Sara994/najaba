@@ -26,7 +26,7 @@ class Course extends Model
         
     ];
 
-    // function messages(){
-
-    // }
+    function messages(){
+        return $this->hasMany('App\Message', 'course_id', 'id');
+    }
 }

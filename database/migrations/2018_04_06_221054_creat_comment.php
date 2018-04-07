@@ -17,14 +17,12 @@ class CreatComment extends Migration
               $b->increments('id');
               $b->string('comment');
               $b->unsignedInteger('course_id')->nullable();
-              $b->unsignedInteger('trainer_id');
-              $b->unsignedInteger('student_id');
+              $b->unsignedInteger('poster_id');
 
               $b->foreign('course_id')->references('id')->on('course');
-              $b->foreign('trainer_id')->references('id')->on('users');
-              $b->foreign('student_id')->references('id')->on('users');
+              $b->foreign('poster_id')->references('id')->on('users');
               $b->timestamps();
-          });          
+          });
     }
 
     /**

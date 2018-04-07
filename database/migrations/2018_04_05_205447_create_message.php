@@ -18,11 +18,11 @@ class CreateMessage extends Migration
             $b->longText('content');
             $b->unsignedInteger('course_id')->nullable();
             $b->unsignedInteger('trainer_id');
-            $b->unsignedInteger('student_id');
+            $b->unsignedInteger('trainee_id');
 
             $b->foreign('course_id')->references('id')->on('course');
             $b->foreign('trainer_id')->references('id')->on('users');
-            $b->foreign('student_id')->references('id')->on('users');
+            $b->foreign('trainee_id')->references('id')->on('users');
             $b->timestamps();
         });
     }

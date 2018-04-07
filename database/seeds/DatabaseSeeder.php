@@ -9,18 +9,26 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        // $this->call(UsersTableSeeder::class);
+    public function run(){
         App\User::create([
             'name'=>'Abdulrahman',
             'email'=>'abdu@hot.com',
             'password'=>bcrypt('123123123')
         ]);
-
-        App\Course::create([
-            'name'=>"Course 1",
-            'teacher_name'=>"Teacher name"
+        
+        App\User::create([
+            'name'=>'Haifa',
+            'email'=>'haifa@hot.com',
+            'password'=>bcrypt('123123123')
         ]);
+        
+
+        for($i = 0 ; $i< 10;$i++){
+            App\Course::create([
+                'name'=>"Course " . $i,
+                'teacher_name'=>"Teacher name" . $i
+            ]);
+        }
+        
     }
 }

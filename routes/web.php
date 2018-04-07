@@ -21,7 +21,11 @@ Route::get('/course', function(){
 });
 Route::get('/course/create', function(){ return view('course/create');});
 Route::post('/course/create', 'CourseController@create');
+
+
 Route::get('/course/{id}', 'CourseController@view');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
