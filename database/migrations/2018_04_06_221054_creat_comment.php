@@ -13,9 +13,9 @@ class CreatComment extends Migration
      */
     public function up()
     {
-          Schema::create('comment', function (Blueprint $table) {
-              $table->increments('id');
-              $table->string('comment');
+          Schema::create('comment', function (Blueprint $b) {
+              $b->increments('id');
+              $b->string('comment');
               $b->unsignedInteger('course_id')->nullable();
               $b->unsignedInteger('trainer_id');
               $b->unsignedInteger('student_id');
@@ -24,6 +24,7 @@ class CreatComment extends Migration
               $b->foreign('trainer_id')->references('id')->on('users');
               $b->foreign('student_id')->references('id')->on('users');
               $b->timestamps();
+          });          
     }
 
     /**
