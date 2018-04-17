@@ -10,8 +10,13 @@ class CreateCourse extends Migration
         Schema::create('course', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('teacher_name');
+            $table->string('location');
+            $table->string('duration');
+            $table->string('time');
+            $table->integer('number_of_seats');
+            $table->unsignedinteger('trainer_id');
             $table->timestamps(); // created_at , updated_at
+            $table->foreign('trainer_id')->references('id')->on('users');
         });
     }
 

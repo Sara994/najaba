@@ -14,7 +14,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'name','teacher_name'
+        'name','trainer_id','time','location','duration','number_of_seats'
     ];
 
     /**
@@ -25,6 +25,10 @@ class Course extends Model
     protected $hidden = [
         
     ];
+
+    function trainer(){
+        return $this->hasOne('App\User','id','trainer_id');
+    }
 
     function messages(){
         return $this->hasMany('App\Message', 'course_id', 'id');

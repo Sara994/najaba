@@ -4,22 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use Auth;
 
 class CourseController extends Controller{
     function create(Request $request ){
-        Course::create([
-            'name' => $request->name,
-            'teacher_name' => $request->teacher_name
-        ]);
+        $fields = $request->except('photo');
+        $fields['trainer_id'] = Auth::user()->id;
+        if($request->file('photo')){
+            $path = $request->file('photo')->store('photos');
+            $fields['photo'] = $path;
+        }
+        Course::create($fields);
 
-        $courses = Course::all();
-        return view("course",["courses"=> $courses]);
+        return redirect("user/courses");
     }
 
-    function view($courseId){
+    function view($courseId,Request $request){
         $course = Course::find($courseId);
-        
-        return view('course/view',$course);
+        $path = explode('/',$request->path());
+        if(sizeof($path) != 3)
+            return view('course/course_content',['id'=>$courseId,'course'=>$course]);
+        else{
+            $path = $path[2];
+            if(!in_array($path,['course_content','comments','details']))
+                return view('course/course_content',['id'=>$courseId,'course'=>$course]);
+            
+            return view('course/'.$path,['id'=>$courseId,'course'=>$course]);
+        }
     }
 
     function list(){

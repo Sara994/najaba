@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Message;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role','age','phone_number','national_id','address','university',
+        'university_id','major','level','profile_picture'
     ];
 
     /**
@@ -26,4 +28,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    function courses(){
+        return Course::where('trainer_id',$this->id)->get();
+    }
+
+    function messages(){
+        return Message::where('from_id',$this->id)->orWhere('to_id',$this->id)->get();
+    }
 }
