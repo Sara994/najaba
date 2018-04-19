@@ -48,7 +48,7 @@ class UserController extends Controller{
             'level' => $request->level
         ];
         if($request->file('profile_picture')){
-            $path = $request->file('profile_picture')->store('photos');
+            $userData['profile_picture'] = $request->file('profile_picture')->store('photos');
         }
         
         Auth::user()->update($userData);

@@ -53,7 +53,9 @@
                         <input type="file" name="profile_picture" class="form-control" placeholder="الصورة الشخصية">
                     </div>
                     <div>
-                        <img src="{{asset($user->profile_picture)}}" >
+                        @if($user->profile_picture)
+                        <img style="max-height:100px" src="{{asset($user->profile_picture)}}" >
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-7">

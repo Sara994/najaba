@@ -6,8 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Message;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable{
     use Notifiable;
 
     /**
@@ -31,6 +30,10 @@ class User extends Authenticatable
 
     function courses(){
         return Course::where('trainer_id',$this->id)->get();
+    }
+
+    function attending_courses(){
+        return $this->belongsToMany('App\Course','student_course','student_id');
     }
 
     function messages(){

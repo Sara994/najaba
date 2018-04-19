@@ -1,0 +1,43 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
+# Ensure we skip ".env", which is only for local development
+skip_files:
+  - .env
+
+env_variables:
+  # Put production environment variables here.
+  APP_LOG: errorlog
+  APP_KEY: base64:G9FlAVMfVBpHJuf2M7FtDvneHl0zLIDIQnSE7413WuQ=
+  STORAGE_DIR: /tmp
+  APP_NAME: Laravel
+#  CACHE_DRIVER: database
+#  SESSION_DRIVER: cookie
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+#  BROADCAST_DRIVER: log
+#  CACHE_DRIVER: file
+#  SESSION_DRIVER: file
+#  QUEUE_DRIVER: sync
+  DB_CONNECTION: mysql
+  DB_HOST: 127.0.0.1
+  DB_PORT: 3306
+  DB_DATABASE: qayem
+  DB_USERNAME: root
+  DB_PASSWORD: 3cbOvPmnOkLlHd11
+  DB_SOCKET: "/cloudsql/qayem-182915:europe-west3:qayem3"
+  APP_DEBUG: true
+  MAIL_DRIVER: smtp
+  MAIL_HOST: smtp.mailgun.org
+  MAIL_PORT: 587
+  MAIL_USERNAME: postmaster@sandboxd7bfe9408ece470d9db76b9aeb68fe89.mailgun.org
+  MAIL_PASSWORD: 5e0d8eb5b8aef6fe60f288c06c29522b
+#  MAIL_ENCRYPTION: null
+
+beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: "qayem-182915:europe-west3:qayem3"

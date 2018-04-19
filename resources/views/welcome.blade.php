@@ -143,112 +143,47 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
             <div class="carousel-inner">
-                <!--<div class="container">
-                <div class="row">-->
                 <div class="item active">
+                    @foreach(App\Course::orderBy('created_at', 'desc')->limit(3)->get() as $course)
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="#">
+                        <a href="{{url('course/'.$course->id)}}">
                             <div class="panel panel-default">
                                 <div class="panel-header">
-                                    <img src="{{asset('images/lecu1.jpg')}}" alt="silder1" class="img-responsive">
-
+                                    @if($course->photo)
+                                        <img style="max-width:100%;max-height:100%" src="{{url($course->photo)}}" alt="silder1" class="img-responsive">
+                                    @else
+                                        <img style="max-width:100%;max-height:100%" src="{{asset('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
+                                    @endif
                                 </div>
                                 <div class="panel-body text-center">
-
-                                    <p> دورة ادارة المشاريع</p>
-
-                                    <!-- <div><span>المدرب</span><p>احمد </p></div>-->
-
+                                    <p> {{$course->name}}</p>
                                 </div>
                             </div>
                         </a>
                     </div>
 
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="#">
-
-                            <div class="panel panel-default">
-                                <div class="panel-header">
-                                    <img src="{{asset('images/lecu2.jpg')}}" alt="silder1" class="img-responsive">
-                                </div>
-                                <div class="panel-body text-center">
-
-                                    <p> دورة تعليم اكواد</p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="#">
-                            <div class="panel panel-default">
-                                <div class="panel-header">
-                                    <img src="{{asset('images/lecu3.jpg')}}" alt="silder1" class="img-responsive">
-
-                                </div>
-                                <div class="panel-body text-center">
-
-                                    <p> دورة تعلم اللغة اليابانية</p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!--Anther silder -->
-
+                    @endforeach
                 </div>
 
                 <div class="item">
-
+                    @foreach(App\Course::orderBy('created_at', 'desc')->limit(3)->offset(3)->get() as $course)
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="#">
+                        <a href="{{url('course/'.$course->id)}}">
                             <div class="panel panel-default">
                                 <div class="panel-header">
-                                    <img src="{{asset('images/lecu4.jpg')}}" alt="silder1" class="img-responsive">
-
+                                    @if($course->photo)
+                                        <img style="max-width:100%;max-height:100%" src="{{url($course->photo)}}" alt="silder1" class="img-responsive">
+                                    @else
+                                        <img style="max-width:100%;max-height:100%" src="{{asset('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
+                                    @endif
                                 </div>
                                 <div class="panel-body text-center">
-
-                                    <p> الادب السردي</p>
-
+                                    <p>{{$course->name}}</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="#">
-                            <div class="panel panel-default">
-                                <div class="panel-header">
-                                    <img src="{{asset('images/lecu5.jpg')}}" alt="silder1" class="img-responsive">
-
-                                </div>
-                                <div class="panel-body text-center">
-
-                                    <p>شرح حقوق العمل وواجبات العمال</p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="course_deteles.html">
-                            <div class="panel panel-default">
-                                <div class="panel-header">
-                                    <img src="{{asset('images/lecu6.jpg')}}" alt="silder1" class="img-responsive">
-
-                                </div>
-                                <div class="panel-body text-center">
-
-                                    <p>كتابة التقارير الاعلامية</p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
+                    @endforeach
                 </div>
 
             </div>
@@ -273,7 +208,7 @@
             <div class="col-md-12 section-title">
                 <h2>شركاء النجاح</h2>
             </div>
-            <div class="img-col">
+            <div class="col-md-12">
                 <div class="col-md-8 text-center col-md-offset-2">
                     <img src="{{asset('images/kau.jpg')}}" class="" width="250px" height="250px">
                 </div>
@@ -283,44 +218,118 @@
 </section>
 <!-- advans part -->
 <section class="ima-back">
-    <div class="container-rem">
-        <div class="row">
-            <div class="col-md-12 section-title text-center">
-                <h2>مزايا</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="icon-left">
-                    <i class=" glyphicon glyphicon-comment"></i>
-                </div>
-                <div class="subject">
-                    <h4>خدمة التواصل والمشاركة مع المدربين و ادارة الموقع.</h4>
-                </div>
-                <div class="icon-left">
-                    <i class="glyphicon glyphicon-blackboard"></i>
-                </div>
-                <div class="subject">
-                    <h4>امكانية تقييم الدورات التدريبية واضافة تعليق عليها.</h4>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="icon-right">
-                    <i class="glyphicon glyphicon-bullhorn"></i>
-                </div>
-                <div class="subject">
-                    <h4> الاعلان ومعرفة مدة وزمان ومكان الدورة التدريبية</h4>
-                </div>
-                <div class="icon-right">
-                    <i class="fas fa-question"></i>
-                </div>
-                <div class="subject">
-                    <h4>اتاحة تقديم الاستفسارات والأسئلة والإجابة عليها مباشرة من المدربين ة</h4>
-                </div>
-            </div>
-        </div>
+    <<div class="row">
+      <div class="col-md-12 section-title text-center">
+        <h2>مزايا</h2>
+      </div>
     </div>
+  <section class="testimoials" style="margin-top: 20px; margin-bottom: 20px;" >
+    
+  <div class="testimoials-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 ">
+          <div id="carousel-testimoials" class="carousel slide" data-ride="carousel">
+            <!-- indicators -->
+            <ol class="carousel-indicators " style="padding-right: 160px">
+                         <li data-target="#carousel-testimoials" data-slide-to="0" class="active"></li>
+                         <li data-target="#carousel-testimoials" data-slide-to="1"></li>
+                         <li data-target="#carousel-testimoials" data-slide-to="2"></li>
+                         <li data-target="#carousel-testimoials" data-slide-to="3"></li>
+
+                        </ol>
+
+                        <!-- wrapper for slides -->
+                        <div class="carousel-inner">
+                          <!-- Add the first item -->
+                          <div class="item active text-center">
+                             <i class=" glyphicon glyphicon-comment" style="font-size: 80px; color: #129cf3;"></i>
+                            <div class="testimoials-caption text-center">
+                              <h2>خدمة التواصل والمشاركة مع المدربين و ادارة الموقع.</h2>
+                              
+                            </div>
+                          </div>
+
+                           <!-- Add the second item -->
+                          <div class="item  text-center">
+                           <i class="glyphicon glyphicon-blackboard" style="font-size: 80px; color: #129cf3;"></i>
+                            <div class="testimoials-caption text-center">
+                              <h2>امكانية تقييم الدورات التدريبية واضافة تعليق عليها.</h2>
+                              
+                            </div>
+                          </div>
+
+
+
+
+                          <!-- Add the Threeth item -->
+                          <div class="item  text-center">
+                            <i class="glyphicon glyphicon-bullhorn"  style="font-size: 80px; color: #129cf3;"></i>
+                            <div class="testimoials-caption text-center">
+                              <h2>لاعلان ومعرفة مدة وزمان ومكان الدورة التدريبية</h2>
+                              
+                            </div>
+                          </div>
+
+                          <div class="item  text-center">
+                           <i class="fas fa-question" style="font-size: 80px; color: #129cf3;"></i>
+                            <div class="testimoials-caption text-center">
+                              <h2>اتاحة تقديم الاستفسارات والأسئلة والإجابة عليها مباشرة من المدربين ة</h2>
+                            
+                            </div>
+                          </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+                  </div>
+
+                       
+
+      </div>
+    </div>
+  </div>
+    
+  
+</section>
+
+</section>
+
+<section class="contactus">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title text-center">
+          <h2>تواصل معنا </h2>
+         
+        </div>
+        <div class="col-md-12">
+          <div class="text-center">
+             <p>نسعد بتواصلكم..</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <form class="cont">
+          <div class="col-md-6">
+            <input type="text" name="" placeholder="الاسم" class="form-control">
+          <input type="text" name="" placeholder="الايميل" class="form-control">
+          <input type="text" name="" placeholder="الموضوع" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <textarea style="background-color:#FFF" class="form-control" rows="5" placeholder="الرساله"></textarea>
+          </div>
+         <div class="text-center">
+            <input type="submit" name="" class="btn btn-info btnm" value="ارسال">
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
 @endsection

@@ -37,9 +37,15 @@ Route::group(['prefix'=>'course'],function(){
     Route::get('/{id}', 'CourseController@view');
     Route::get('/{id}/course_content', 'CourseController@view');
     Route::get('/{id}/comments', 'CourseController@view');
+    Route::post('/{id}/comments', 'CommentController@create');
     Route::get('/{id}/details', 'CourseController@view');
-
-    
+    Route::get('/{id}/register',function($courseId){
+        App\StudentCourse::create([
+            'student_id'=>Auth::user()->id,
+            'course_id'=>$courseId
+        ]);
+        return redirect('course/'.$courseId);
+    });
 });
 
 

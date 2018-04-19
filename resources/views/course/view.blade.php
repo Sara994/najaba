@@ -5,7 +5,11 @@
     <div class="ccontainer">
         <div class="row">
             <div class="col-md-12">
-                <img src="{{asset('images/lecu6.jpg')}}" class="img-responsive center-block img-circle" width="200px" height="200px">
+                @if($course->photo)
+                    <img src="{{url($course->photo)}}" class="img-responsive center-block img-circle" width="200px" height="200px">
+                @else
+                    <img src="{{asset('images/placeholder.gif')}}" class="img-responsive center-block img-circle" width="200px" height="200px">
+                @endif
             </div>
             <div class="col-md-12 text-center">
                 <div class="section-title">
@@ -28,7 +32,7 @@
                         <li><a href="{{url('course/' .$id .'/comments')}}">التعليقات</a></li>
                     </ul>
                 </nav>
-                <div class="col-md-9">
+                <div class="col-md-12">
                     @yield('course_content')
                 </div>
             </div>
@@ -38,10 +42,14 @@
                     <div class="panel panel-default">
                         <div class="panel-headeing">
                             <!--<video src="></video>-->
-                            <iframe width="400" height="315" src="https://www.youtube.com/embed/MsW9wvi3uAg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            @if($course->intro_video)
+                            <iframe width="400" height="315" src="{{$course->intro_video}}" frameborder="0" allow="autoplay; encrypted-media" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            @endif
                         </div>
                         <div class="panel-body">
-                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#Login">تسجيل</a>
+                            @if(Auth::user()->role == 'STUDENT')
+                                <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info"> <!-- data-toggle="modal" data-target="#Login-rem">-->تسجيل</a>
+                            @endif
                             <div class="rank">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -73,8 +81,8 @@
                             <img src="{{asset('images/man.png')}}" class="img-responsive" width="100px" height="100px">
                         </div>
                         <div class="text-detels ">
-                            <h4>{{$course->trainer->name }} <a href="#"><i class="fas fa-envelope-square"></i></a></div></h4>
-                            <p>خريج كلية الاعلام و الاتصال - جامعة الامام محمد بن سعود الاسلامية.</p>
+                            <h4><a href="{{url('/user/'. $course->trainer->id)}}">{{$course->trainer->name }} </a><a href="{{url('/user/messages')}}"><i class="fas fa-envelope-square"></i></a></div></h4>
+                            <p>{{$course->trainer->university}}-{{$course->trainer->major}}</p>
 
                             <div></div>
                         </div>

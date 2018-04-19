@@ -15,6 +15,6 @@ class Cmment extends Model{
         return $this->hasOne('App\Course', 'course_id', 'id');
     }
     public function poster(){
-        return $this->hasOne('App\User', 'poster_id', 'id');
+        return User::find($this->poster_id);
     }
 }

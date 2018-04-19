@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Add New Course</div>
+                <div class="card-header">{{__('main.add_new_course')}}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ url('course/create') }}">
@@ -79,14 +79,57 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="intro_video" class="col-md-4 col-form-label text-md-right">{{ __('main.intro_video') }}</label>
+
+                            <div class="col-md-6">
+                                <input pattern="(http(s)?:\/\/)?((w){3}.)?youtube?(\.com)?\/.+v=(.*)" placeholder="https://www.youtube.com/watch?v=" id="intro_video" type="text" class="form-control{{ $errors->has('intro_video') ? ' is-invalid' : '' }}" name="intro_video" value="{{ old('intro_video') }}" required autofocus>
+
+                                @if ($errors->has('intro_video'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('intro_video') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('main.photo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="photo" type="file" class="form-control{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ old('photo') }}" required autofocus>
+                                <input id="photo" type="file" class="form-control{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ old('photo') }}" autofocus>
 
                                 @if ($errors->has('photo'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('photo') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('main.description') }}</label>
+
+                            <div class="col-md-8">
+                                <textarea rows="10" id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}"></textarea>
+
+                                @if ($errors->has('description'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="content" class="col-md-4 col-form-label text-md-right">{{ __('main.content') }}</label>
+
+                            <div class="col-md-8">
+                                <textarea rows="10" id="content" type="file" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" value="{{ old('content') }}" ></textarea>
+
+                                @if ($errors->has('content'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('content') }}</strong>
                                     </span>
                                 @endif
                             </div>

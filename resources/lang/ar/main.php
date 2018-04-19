@@ -1,18 +1,6 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
     'login' => 'تسجيل الدخول',
     'logout' => 'تسجيل الخروج',
     'register' => 'تسجيل',
@@ -24,9 +12,12 @@ return [
     'name'=>'الاسم',
     'location'=>'الموقع',
     'duration'=>'المدة',
-    'number_of_seats'=>'عدد المواقع',
+    'number_of_seats'=>'عدد المقاعد',
     'time'=>'الوقت',
     'photo'=>'الصورة',
     'save'=>'حفط',
-    
+    'description'=>'الوصف',
+    'intro_video'=>'فيديو عرض عن الدورة',
+    'content'=>'المحتوى',
+    'add_new_course'=>'إضافة دورة جديدة'
 ];

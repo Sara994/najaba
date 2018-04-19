@@ -13,6 +13,10 @@ class CreateCourse extends Migration
             $table->string('location');
             $table->string('duration');
             $table->string('time');
+            $table->string('photo')->nullable();
+            $table->text('description')->nullable();
+            $table->text('content')->nullable();
+            $table->string('intro_video')->nullable();
             $table->integer('number_of_seats');
             $table->unsignedinteger('trainer_id');
             $table->timestamps(); // created_at , updated_at

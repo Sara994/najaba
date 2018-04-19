@@ -8,7 +8,13 @@ use Auth;
 
 class CourseController extends Controller{
     function create(Request $request ){
-        $fields = $request->except('photo');
+        $fields = $request->except(['photo','intro_video']);
+
+        $url = $request->intro_video;
+        parse_str( parse_url( $url, PHP_URL_QUERY ), $vars );
+        if(isset($vars['v']))
+            $fields['intro_video'] = "https://www.youtube.com/embed/" . $vars['v'];
+
         $fields['trainer_id'] = Auth::user()->id;
         if($request->file('photo')){
             $path = $request->file('photo')->store('photos');
@@ -50,7 +56,8 @@ class CourseController extends Controller{
 
     }
 
-    function join(Request $request){
+    function join($courseId){
+        
 
     }
 }

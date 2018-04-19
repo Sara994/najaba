@@ -14,7 +14,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'name','trainer_id','time','location','duration','number_of_seats'
+        'name','trainer_id','time','location','duration','number_of_seats','description','content','intro_video','photo'
     ];
 
     /**
@@ -32,5 +32,9 @@ class Course extends Model
 
     function messages(){
         return $this->hasMany('App\Message', 'course_id', 'id');
+    }
+
+    function comments(){
+        return Cmment::where('course_id',$this->id)->get();
     }
 }
