@@ -23,7 +23,7 @@ env_variables:
   DB_USERNAME: forge
   DB_PASSWORD: BocoSq6xJDQWfayPGajt
   DB_SOCKET: /cloudsql/najaba-201522:europe-west3:najaba
-  APP_DEBUG: TRUE
+  APP_DEBUG: FALSE
 
 beta_settings:
     # for Cloud SQL, set this value to the Cloud SQL connection name,

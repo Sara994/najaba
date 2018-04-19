@@ -53,7 +53,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">الدورات
                             </a>
                             <ul class="dropdown-menu">
-                                @if(Auth::user()->role == 'TRAINER')
+                                @if(Auth::user() && Auth::user()->role == 'TRAINER')
                                 <li><a href="/course/create">{{__('main.add_new_course')}}</a></li>
                                 @endif
                                 <li><a href="#">دورات جديدة</a></li>
