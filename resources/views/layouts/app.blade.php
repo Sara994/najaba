@@ -11,21 +11,21 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('/js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 
     <!--Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/css.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/css.css')}}">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
@@ -34,11 +34,11 @@
 
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-flipped.css">
-    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+    <script type="text/javascript" src="{{asset('/js/nicEdit-latest.js')}}"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/custom.js') }}"></script>
     <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 </head>
 <body style="display:flex;flex-direction:column;min-height:100vh">
@@ -60,7 +60,7 @@
                             </ul>
                         </li>
                         <!-- <li><a href="#">تصنيف</a></li>-->
-                        <li><a href="{{url('aboutus')}}">عن نجابة</a></li>
+                        <li><a href="{{url('/aboutus')}}">عن نجابة</a></li>
                     </ul>
                     <div style="flex:1"></div>
 
@@ -82,8 +82,8 @@
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
                             @guest
-                                <li><a class="nav-link" href="{{ route('login') }}">{{ __('main.login') }}</a></li>
-                                <li><a class="nav-link" href="{{ route('register') }}">{{ __('main.register') }}</a></li>
+                                <li><a class="nav-link" href="{{ route('/login') }}">{{ __('main.login') }}</a></li>
+                                <li><a class="nav-link" href="{{ route('/register') }}">{{ __('main.register') }}</a></li>
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -91,9 +91,9 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{url('user/profile')}}">الملف الشخصي</a>
-                                        <a class="dropdown-item" href="{{url('user/courses')}}">الدورات</a>
-                                        <a class="dropdown-item" href="{{url('user/messages')}}">الرسائل</a>
+                                        <a class="dropdown-item" href="{{url('/user/profile')}}">الملف الشخصي</a>
+                                        <a class="dropdown-item" href="{{url('/user/courses')}}">الدورات</a>
+                                        <a class="dropdown-item" href="{{url('/user/messages')}}">الرسائل</a>
 
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">
