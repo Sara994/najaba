@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Message;
 use Auth;
 
 class UserController extends Controller{
@@ -21,6 +22,15 @@ class UserController extends Controller{
             return view('user/'.$path,['path'=>$path,'id'=>$userId,'user'=>$user]);
         }
     }
+
+    function messages($messageId=-1){
+        $user = Auth::user();
+        $message = Message::find($messageId);
+        $userId = $user->id;
+        
+        return view('user/messages',['message'=>$message, 'id'=>$userId,'user'=>$user]);
+    }
+
     function view($userId,Request $request){
         $user = User::find($userId);
         $path = explode('/',$request->path());

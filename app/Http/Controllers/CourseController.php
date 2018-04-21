@@ -40,24 +40,12 @@ class CourseController extends Controller{
     }
 
     function list(){
-        $courses = Course::list();
-        return view("list_courses");
+        $courses = Course::orderby('created_at','desc')->get();
+        return view("courses_list",['courses'=>$courses]);
     }
 
-    function delete(){
-
-    }
-
-    function edit(){
-
-    }
-
-    function assignTrainer(){
-
-    }
-
-    function join($courseId){
-        
-
+    function search(Request $request){
+        $courses = Course::where('name','like',"%$request->needle%")->orderby('created_at','desc')->get();;
+        return view("courses_list",['courses'=>$courses]);
     }
 }

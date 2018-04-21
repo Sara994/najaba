@@ -56,7 +56,7 @@
                                 @if(Auth::user() && Auth::user()->role == 'TRAINER')
                                 <li><a href="/course/create">{{__('main.add_new_course')}}</a></li>
                                 @endif
-                                <li><a href="#">دورات جديدة</a></li>
+                                <li><a href="{{url('/course/latest')}}">دورات جديدة</a></li>
                             </ul>
                         </li>
                         <!-- <li><a href="#">تصنيف</a></li>-->
@@ -72,12 +72,14 @@
                         </ul>
 
                         <div class="navbar-form navbar-right">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">بحث</button>
+                            <form method="post" action="{{url('/course/search')}}">
+                                @csrf
+                                <div class="form-group">
+                                    <input name="needle" type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">بحث</button>
+                            </form>
                         </div>
-
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
@@ -144,7 +146,5 @@
             </div>
         </div>
     </section>
-    
-    
 </body>
 </html>

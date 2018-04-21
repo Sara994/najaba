@@ -9,29 +9,12 @@ use App\Course;
 use Auth;
 
 class MessageController extends Controller{
-    function create(Request $request,$courseId){
-        
-        $trainer = User::find(1);
-        $student =  Auth::user();
-        $course = Course::find($courseId);
+    function create(Request $request){
+        $fields = $request->all();
+        $fields['from_id'] = Auth::user()->id;
+        Message::create($fields);
 
-        Message::create([
-            'course_id'=>$course->id,
-            'trainer_id'=> $trainer->id,
-            'student_id' => $student->id,
-            'content'=>$request->content,
-            'title'=>$request->title
-        ]);
-
-        // $message = new Message;
-        // $message->content = $request->content;
-        // $message->title = $request->title;
-        // $message->course()->associate($course);
-        // $message->trainer()->associate($trainer);
-        // $message->student()->associate($student);
-        // $message->save();
-
-        return view('message/view');
+        return redirect('/user/messages');
     }
 
     function list(){
