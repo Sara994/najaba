@@ -9,7 +9,7 @@
                         <li><a href="{{url('user/'. $id .'/profile')}}">الملف الشخصي</a></li>
                         <li><a href="{{url('user/'. $id .'/courses')}}">الدورات</a></li>
                         <li style="flex:1"><a href="{{url('user/'. $id .'/messages')}}">الرسائل</a></li>
-                        @if ($id == Auth::user()->id)
+                        @if (null !== Auth::user() && $id == Auth::user()->id)
                         <li style="align-self:center"><button class="btn btn-success btn-block"><a href="{{url('user/edit')}}" style="color:inherit;text-decoration:none">تعديل</a></button></li>
                         @endif
                     </ul>
