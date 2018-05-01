@@ -47,8 +47,19 @@
                             @endif
                         </div>
                         <div class="panel-body">
+                            
                             @if(null !== Auth::user() && Auth::user()->role == 'STUDENT')
-                                <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info"> <!-- data-toggle="modal" data-target="#Login-rem">-->تسجيل</a>
+                                @php $is_registered =  App\StudentCourse::where('course_id',$course->id)->where('user_id',Auth::user()->id)->first()   @endphp
+                                @if($is_registered === null)
+                                    <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info">
+                                        تسجيل
+                                    </a>
+                                @else
+                                    <a href="#" class="btn btn-info">
+                                        انت مسجل في هذه الدوره
+                                    </a>
+                                @endif
+
                             @endif
                             <div class="rank">
                                 <span class="fa fa-star checked"></span>
