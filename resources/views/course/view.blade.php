@@ -47,7 +47,7 @@
                             @endif
                         </div>
                         <div class="panel-body">
-                            @if(Auth::user()->role == 'STUDENT')
+                            @if(isset(Auth::user()) && Auth::user()->role == 'STUDENT')
                                 <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info"> <!-- data-toggle="modal" data-target="#Login-rem">-->تسجيل</a>
                             @endif
                             <div class="rank">
