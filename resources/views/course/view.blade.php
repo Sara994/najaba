@@ -49,7 +49,7 @@
                         <div class="panel-body">
                             
                             @if(null !== Auth::user() && Auth::user()->role == 'STUDENT')
-                                @php $is_registered =  App\StudentCourse::where('course_id',$course->id)->where('user_id',Auth::user()->id)->first()   @endphp
+                                @php $is_registered =  App\StudentCourse::where('course_id',$course->id)->where('student_id',Auth::user()->id)->first()   @endphp
                                 @if($is_registered === null)
                                     <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info">
                                         تسجيل
