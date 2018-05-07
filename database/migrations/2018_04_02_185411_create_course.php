@@ -19,6 +19,7 @@ class CreateCourse extends Migration
             $table->string('intro_video')->nullable();
             $table->integer('number_of_seats');
             $table->unsignedinteger('trainer_id');
+            $table->unsignedinteger('category');
             $table->timestamps(); // created_at , updated_at
             $table->foreign('trainer_id')->references('id')->on('users');
         });
