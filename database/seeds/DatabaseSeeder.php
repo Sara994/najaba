@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'trainer_id'=>1,
             'location'=>'ق5 مبنى علوم الحاسب',
             'duration'=>'ثلاث ايام',
+            'categroy'=>1,
             'time'=>'7:30pm',
             'number_of_seats'=>35
         ]);
