@@ -219,87 +219,48 @@
     </div>
 </section>
 <!-- advans part -->
-<section class="ima-back">
-    <<div class="row">
-      <div class="col-md-12 section-title text-center">
-        <h2>مزايا</h2>
-      </div>
-    </div>
-  <section class="testimoials" style="margin-top: 20px; margin-bottom: 20px;" >
-    
-  <div class="testimoials-overlay">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 ">
-          <div id="carousel-testimoials" class="carousel slide" data-ride="carousel">
-            <!-- indicators -->
-            <ol class="carousel-indicators " style="padding-right: 160px">
-                         <li data-target="#carousel-testimoials" data-slide-to="0" class="active"></li>
-                         <li data-target="#carousel-testimoials" data-slide-to="1"></li>
-                         <li data-target="#carousel-testimoials" data-slide-to="2"></li>
-                         <li data-target="#carousel-testimoials" data-slide-to="3"></li>
-
-                        </ol>
-
-                        <!-- wrapper for slides -->
-                        <div class="carousel-inner">
-                          <!-- Add the first item -->
-                          <div class="item active text-center">
-                             <i class=" glyphicon glyphicon-comment" style="font-size: 80px; color: #129cf3;"></i>
-                            <div class="testimoials-caption text-center">
-                              <h2>خدمة التواصل والمشاركة مع المدربين و ادارة الموقع.</h2>
-                              
-                            </div>
-                          </div>
-
-                           <!-- Add the second item -->
-                          <div class="item  text-center">
-                           <i class="glyphicon glyphicon-blackboard" style="font-size: 80px; color: #129cf3;"></i>
-                            <div class="testimoials-caption text-center">
-                              <h2>امكانية تقييم الدورات التدريبية واضافة تعليق عليها.</h2>
-                              
-                            </div>
-                          </div>
-
-
-
-
-                          <!-- Add the Threeth item -->
-                          <div class="item  text-center">
-                            <i class="glyphicon glyphicon-bullhorn"  style="font-size: 80px; color: #129cf3;"></i>
-                            <div class="testimoials-caption text-center">
-                              <h2>لاعلان ومعرفة مدة وزمان ومكان الدورة التدريبية</h2>
-                              
-                            </div>
-                          </div>
-
-                          <div class="item  text-center">
-                           <i class="fas fa-question" style="font-size: 80px; color: #129cf3;"></i>
-                            <div class="testimoials-caption text-center">
-                              <h2>اتاحة تقديم الاستفسارات والأسئلة والإجابة عليها مباشرة من المدربين ة</h2>
-                            
-                            </div>
-                          </div>
-
-
-
-                        </div>
-
-
+<section class="testimoials">
+        <div class="container">
+        <div class="row">
+              <div class="col-md-12 section-title text-center">
+                <h2 style="font-size:3.5vw">مزايا</h2>
+              </div>
+                    <div class="col-md-3 text-center">
+                        <div class="selection-1">
+                         <i class="glyphicon glyphicon-bullhorn icon" style="font-size: 30px; color: #129cf3;"></i>
+                         <h3><b>التواصل</b></h3>
+                         <h4>خدمة التواصل والمشاركة مع المدربين و ادارة الموقع.</h4>
                     </div>
-
-                  </div>
-
-                       
-
-      </div>
-    </div>
-  </div>
-    
-  
-</section>
-
-</section>
+        </div>
+                    <div class="col-md-3 text-center">
+                        <div class="selection-1">
+                                            <i class="glyphicon glyphicon-blackboard icon" style="font-size: 30px; color: #129cf3;"></i>
+                                            <h3><b>التقييم </b></h3>
+                                            <h4>امكانية تقييم الدورات التدريبية واضافة تعليق عليها.</h4>
+                                        </div>
+                    </div>
+        
+                    <div class="col-md-3 text-center">
+                            <div class="selection-1">
+                         <i class="glyphicon glyphicon-bullhorn icon" style="font-size: 30px; color: #129cf3;"></i>
+                         <h3><b>معلومات الدورة التدريبية</b></h3>
+                         <h4> الاعلان ومعرفة مدة وزمان ومكان الدورة التدريبية</h4>
+                    </div>
+                </div>
+        
+                    <div class="col-md-3 text-center">
+                            <div class="selection-1">
+                            <i class="fas fa-question icon" style="font-size: 30px; color: #129cf3;"></i>
+                            <h3><b>تقديم الاستفسارات</b></h3>
+                                <h4>اتاحة تقديم الإستفسارات والأسئلة والإجابة عليها مباشرة من قبل المدربين</h4>
+                            </div>
+                    </div>
+        
+                </div>
+            </div>
+        <br><br>
+        <br><br>
+        </section>
 
 <section class="contactus">
   <div class="container">

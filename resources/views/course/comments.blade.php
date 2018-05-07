@@ -32,7 +32,7 @@
         <div>
             <textarea name="comment" style="width:100%"></textarea>
         </div>
-        <input type="submit" value="Save">
+        <button class="btn btn-default" type="submit">إرسال</button>
     </form>
     @endguest
 </div>

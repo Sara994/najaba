@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-md-11">
-                    <form class="form-horizontal" method="POST" action="{{ url('course/create') }}">
+                    <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('course/create') }}">
                         @csrf
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('main.name') }}</label>

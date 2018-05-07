@@ -78,10 +78,15 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('files/{filename}', function ($filename){
+    $file = App\CourseFile::where('path','like','files/' . $filename)->first();
+    return response()->download(storage_path('app/files/' . $filename),$file->filename);
+});
+
+
 Route::get('photos/{filename}', function ($filename){
     return Image::make(storage_path('app/photos/' . $filename))->response();
 });
-
 
 Route::post('message', 'MessageController@create');
 Route::get('/course/{courseId}/message/create', function(){return view('message/create');});

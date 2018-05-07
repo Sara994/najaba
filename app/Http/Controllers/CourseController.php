@@ -13,12 +13,13 @@ class CourseController extends Controller{
 
         $url = $request->intro_video;
         parse_str( parse_url( $url, PHP_URL_QUERY ), $vars );
-        if(isset($vars['v']))
+        if(isset($vars['v'])){
             $fields['intro_video'] = "https://www.youtube.com/embed/" . $vars['v'];
-
+        }
+        
         $fields['trainer_id'] = Auth::user()->id;
-        if($request->file('photo')){
-            $path = $request->file('photo')->store('photos');
+        if($request->photo){
+            $path = $request->photo->store('photos');
             $fields['photo'] = $path;
         }
         Course::create($fields);
@@ -35,7 +36,7 @@ class CourseController extends Controller{
                 if(!is_null($request->photos[$i])){
                     $file = $request->photos[$i];
                     $filenames[]=$file;
-                    $path = $request->photos[$i]->store('photos');
+                    $path = $request->photos[$i]->store('files');
                     CourseFile::create([
                         'path'=>$path,
                         'filename'=>$file->getClientOriginalName(),
