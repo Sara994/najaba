@@ -19,18 +19,21 @@ Route::get('/course', function(){
     $courses = App\Course::all();
     return view('course',['courses'=>$courses]);
 });
-Route::get('/course/create', function(){ return view('course/create');});
+
 Route::post('/course/create', 'CourseController@create');
 
 Route::group(['prefix'=>'course'],function(){
-    Route::get('create', function(){ return view('course/create');} )->middleware('auth');
+    Route::get('create', function(){
+        return view('course/create',['id' => Auth::user()->id,'user'=>Auth::user()]);
+    })->middleware('auth');
     Route::post('create','CourseController@create' )->middleware('auth');
-
     
     Route::get('/{id}/course_content', 'CourseController@view');
     Route::get('/{id}/comments', 'CourseController@view');
     Route::post('/{id}/comments', 'CommentController@create');
     Route::get('/{id}/details', 'CourseController@view');
+    Route::get('/{id}/files', 'CourseController@view');
+    Route::post('/{id}/files','CourseController@addFiles')->middleware('auth');
     Route::post('/search','CourseController@search');
     Route::get('/latest','CourseController@list');
     Route::get('/{id}/register',function($courseId){

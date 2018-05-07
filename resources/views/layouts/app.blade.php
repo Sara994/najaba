@@ -24,6 +24,9 @@
     <!--Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    
     <link rel="stylesheet" type="text/css" href="{{asset('/css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/css.css')}}">
 

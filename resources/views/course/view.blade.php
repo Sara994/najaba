@@ -30,6 +30,7 @@
                         <li><a href="{{url('course/'. $id .'/course_content')}}" class="active">المحتوى</a></li>
                         <!--   <li><a href="#">التقيم</a></li>-->
                         <li><a href="{{url('course/' .$id .'/comments')}}">التعليقات</a></li>
+                        <li><a href="{{url('course/' .$id .'/files')}}">الملفات</a></li>
                     </ul>
                 </nav>
                 <div class="col-md-12">

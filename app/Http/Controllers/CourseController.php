@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\CourseFile;
 use Auth;
 
 class CourseController extends Controller{
@@ -25,6 +26,32 @@ class CourseController extends Controller{
         return redirect("user/courses");
     }
 
+    function addFiles($courseId,Request $request){
+        $filenames = [];
+        
+        if(isset($request->photos)){
+            for($i = 0; $i < count($request->photos) ;$i++) {
+                
+                if(!is_null($request->photos[$i])){
+                    $file = $request->photos[$i];
+                    $filenames[]=$file;
+                    $path = $request->photos[$i]->store('photos');
+                    CourseFile::create([
+                        'path'=>$path,
+                        'filename'=>$file->getClientOriginalName(),
+                        'course_id' => $courseId
+                    ]);
+                }
+            }
+        }
+
+        return redirect('/course/' . $courseId . '/files');
+    }
+
+    function messageAllStudents($courseId,Request $request){
+        $course = Course::find($courseId);
+    }
+
     function view($courseId,Request $request){
         $course = Course::find($courseId);
         $path = explode('/',$request->path());
@@ -32,7 +59,7 @@ class CourseController extends Controller{
             return view('course/course_content',['id'=>$courseId,'course'=>$course]);
         else{
             $path = $path[2];
-            if(!in_array($path,['course_content','comments','details']))
+            if(!in_array($path,['course_content','comments','details','files']))
                 return view('course/course_content',['id'=>$courseId,'course'=>$course]);
             
             return view('course/'.$path,['id'=>$courseId,'course'=>$course]);

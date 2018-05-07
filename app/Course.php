@@ -14,17 +14,12 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'name','trainer_id','time','location','duration','number_of_seats','description','content','intro_video','photo'
+        'name','trainer_id','time','location','duration','number_of_seats','description','content','intro_video','photo','category'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     * The columns that will not be retrieved from DB
-     * @var array
-     */
-    protected $hidden = [
-        
-    ];
+    function studnets(){
+        return $this->hasMany('App\User','student_course','course_id','student_id');
+    }
 
     function trainer(){
         return $this->hasOne('App\User','id','trainer_id');
@@ -36,5 +31,9 @@ class Course extends Model
 
     function comments(){
         return Cmment::where('course_id',$this->id)->get();
+    }
+
+    function files(){
+        return $this->hasMany('App\CourseFile','course_id','id');
     }
 }

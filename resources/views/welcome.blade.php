@@ -94,33 +94,35 @@
                     
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-2">
-                                <input type="text" value="Abdulrahman" name="name" placeholder="{{__('main.name')}}" class="form-control">
+                                <input type="text" name="name" placeholder="{{__('main.name')}}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-2">
-                                <input type="email" value="aaa@aaa.com" name="email" placeholder="{{__('main.email')}}" class="form-control">
+                                <input type="email" name="email" placeholder="{{__('main.email')}}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3">
+                            <div class="col-md-8 col-md-offset-2">
                                 <label>المهنه :</label>
-                            </div>
-                            <div class="col-md-3 col-md-offset-1">
-                                <label>طالب</label>
-                                <input type="radio" checked="checked" name="role" value="STUDENT" class="form-control">
-                                <label>مدرب</label>
-                                <input type="radio" name="role" value="TRAINER" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-2">
-                                <input type="password" value="123123123" name="password" placeholder="{{__('main.password')}}" class="form-control">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" checked="checked" type="radio" name="role" value="STUDENT">
+                                    <label class="form-check-label" for="inlineRadio1">طالب</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="role" value="TRAINER">
+                                    <label class="form-check-label" for="inlineRadio2">مدرب</label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-2">
-                                <input type="password" value="123123123" name="password_confirmation" placeholder="{{__('main.password_confirm')}}" class="form-control">
+                                <input type="password" name="password" placeholder="{{__('main.password')}}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-2">
+                                <input type="password" name="password_confirmation" placeholder="{{__('main.password_confirm')}}" class="form-control">
                             </div>
                         </div>
                     

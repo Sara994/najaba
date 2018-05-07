@@ -1,14 +1,20 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+@extends('user')
+{{-- @section('content') --}}
+@section('user_content')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{__('main.add_new_course')}}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ url('course/create') }}">
+<section class="courseform">
+    <div class="container">
+        <div class="edit-2 body">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="text-center section-title">
+                        <h2 >اضافة دورة جديدة </h2>
+                    </div>
+                </div>
+                <div class="col-md-11">
+                    <form class="form-horizontal" method="POST" action="{{ url('course/create') }}">
                         @csrf
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('main.name') }}</label>
@@ -24,6 +30,22 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="col-md-4 col-form-label text-md-right">تخصص الدورة </label>
+                            <div class="col-md-6">
+                                <select name="category" class="form-control">
+                                    <option value="1">التربية والتعليم </option>
+                                    <option value="2">العلوم</option>
+                                    <option value="3">التقنية والتكنولوجيا </option>
+                                    <option value="4">الثقافة والفن </option>
+                                    <option value="5">الطب </option>
+                                    <option value="6">الهندسة </option>
+                                    <option value="7">العلوم الاجتماعية </option>
+                                    <option value="8">الاقتصاد والادارة </option>
+                                    <option value="9">علوم الشريعة </option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('main.location') }}</label>
 
@@ -94,7 +116,7 @@
 
 
                         <div class="form-group row">
-                            <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('main.photo') }}</label>
+                            <label for="photo" class="col-md-4 col-form-label text-md-right">غلاف الدورة</label>
 
                             <div class="col-md-6">
                                 <input id="photo" type="file" class="form-control{{ $errors->has('photo') ? ' is-invalid' : '' }}" name="photo" value="{{ old('photo') }}" autofocus>

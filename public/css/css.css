@@ -1,351 +1,622 @@
 /* Genral CSS */
-.section-title{
-	padding-top: 90px;
-	padding-bottom: 50px;
-	}
-	
-	.section-title h2{
-		position: relative;
-		text-align: center;
-		color: #333;
-		font-size: 30px;
-		font-weight: 400;
-		text-transform: uppercase;
-	}
-	.section-title h2:after{
-		content: "";
-		position: absolute;
-		bottom: -20px;
-		left: 50%;
-		width: 60px;
-		height: 1px;
-		background-color: #129CF3;
-		margin-left: -30px;
-		
-	}
-	
-	/* body h1 h2 h3 h4 h5 h6 p {
-		font-family: 
-	}
-	/*===========================================
-	.headers{
-		
-	} */
-	.header{
-		background-image: url("../images/lecu2.jpg");
-	
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: cover;
-		-moz-background-size:cover;
-		-o-background-size:cover;
-		-webkit-background-size:cover;
-	}
-	.header-all{
-		background-color: rgba(0,0,0,0.4);
-	}
-	.text-headers p{
-		font-size: 25px;
-	}
-	.log-marg{
-		margin-bottom: 100px;
-	}
-	.logo-nav{
-		
-		width: 50px;
-		height: 50px;
-		
-		
-	
-	}
-	.header-text{
-		margin-top: 20px;
-	}
-	.navbar-right{
-		margin-right: 4000px;
-	}
-	.log-but {
-		margin-top: 30px;
-		border: 1px solid black;
-		width: 130px;
-		transition: all 1s;
-		-o-transition: all 1s;
-		-moz-transition: all 1s;
-		-webkit-transition: all 1s;
-	}
-	.btn:hover{
-		background-color: #129cf3;
-	}
-	/*slider */
-	.silder-text{
-		margin-bottom: 30px;
-	}
-	
-	.item {
-		padding-right: 150px;
-	}
-	/*carousel-control         { width:  4%; }
-	.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
-	@media (max-width: 767px) {
-	  .carousel-inner .active.left { left: -100%; }
-	  .carousel-inner .next        { left:  100%; }
-	  .carousel-inner .prev    { left: -100%; }
-	  .active > div { display:none; }
-	  .active > div:first-child { display:block; }
-	
-	}
-	@media (min-width: 767px) and (max-width: 992px ) {
-	  .carousel-inner .active.left { left: -50%; }
-	  .carousel-inner .next        { left:  50%; }
-	  .carousel-inner .prev    { left: -50%; }
-	  .active > div { display:none; }
-	  .active > div:first-child { display:block; }
-	  .active > div:first-child + div { display:block; }
-	}
-	@media (min-width: 992px ) {
-	  .carousel-inner .active.left { left: -16.7%; }
-	  .carousel-inner .next        { left:  16.7%; }
-	  .carousel-inner .prev    { left: -16.7%; }  
-	}
-	*/
-	
-	
-	ima-back{
-		background-image: url(../images/back.jpg);
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-webkit-background-size: cover;
-		background-position: 50% 50%;
-	}
-	.subject h4{
-		position: relative;
-		padding-right: 90px;
-		margin-bottom: 65px;
-		text-align: right;
-		margin-top: 35px;
-		
-	}
-	
-	.icon-right{
-	
-		left: 0;
-		top: -8px;
-		font-size: 40px;
-		color: #129CF3;
-		width: 90px;
-		height: 90px;
-		text-align: center;
-	}
-	
-	.icon-left{
-		
-		right: 0;
-		top: -8px;
-		font-size: 40px;
-		color: #129CF3;
-		width: 90px;
-		height: 90px;
-		text-align: center;
-	}
-	/*========footor========*/
-	.footer{
-		background-color: #efefef;
-	}
-	.footer img {
-		margin-top: 6px;
-	
-	}
-	.scoil ul li{
-	
-		display: inline;
-		font-size: 30px;
-		
-	
-	}
-	.scoil ul {
-	
-		margin-top: 40px
-	}
-	.links{
-		margin-top: 30px;
-		margin-right: 100px;
-		
-	}
-	/*==========course deteals =========*/
-	.deteals li{
-	
-		display: inline;
-		margin-left: 30px;
-	
-	}
-	.rank{
-		float: left;
-	}
-	.checked {
-		color: orange;
-	}
-	.fla{
-		margin-right:15px;
-	}
-	/*===========Editi page ==========*/
-	.col-pad{
-		margin-bottom: 20px;
-	}
-	/*========= profile page ========*/
-	.bttoun{
-		margin-bottom: 20px;
-		margin-top: 15px;
-	}
-	.tr {
-		margin-bottom: 20px;
-		margin-top: 15px;
-		margin-left: 60px;
-		background-color: #f8f9f9;
-	}
-	
-	/*=========message =====*/
-	.hig{
-		height: 450px
-	}
-	/*========= coach page ===========*/
-	.alink{
-		display: inline;
-	}
-	.right a{
-		position: relative;
-		text-align: right;
-	}
-	.left a{
-		float: left;
-		width:80px;
-	 
-	}
-	.part1 i{
-		display: block;
-	}
-	.img-left{
-		float: left;
-		width: 80px;
-	
-	}
-	
-	.flor{
-		float: left;
-		right: 80px;
-	}
-	/*=========== contact ============*/
-	.siz {
-		font-size: 90px;
-	}
-	.for{
-		margin: 10px;
-	}
-	/*============ nav bar size ==========*/
-	.navbar-nav li a{
-		font-size: 20px;
-	}
-	/*==============contact us=========*/
-	.cont input{
-		margin-bottom: 30px;
-	}
-	.btnm{
-		margin-top: 10px;
-	}
-	.contactus{
-		background-image: url(../images/back.jpg);
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-webkit-background-size: cover;
-		background-position: 50% 50%;
-	
-	}
-	
-	/*===================silder =================*/
-	.carousel-control{
-		color: #000000;
-		background-color: white;
-	}
-	.carousel-inner:hover{
-		background-color: white;
-	}
-	/*==========add course =====*/
-	.courseform{
-		margin-top: 10px;
-	}
-	
-	.cour{
-		margin-top: 10px;
-		margin-bottom: 5px;
-	}
-	
-	.nameheader{
-		margin-top: 30px;
-	}
-	.texlin{
-		display: inline;
-	}
-	
-	/*===========future =========*/
-	.testimoials{
-		background-image: url("/images/testimonial-bg.jpg");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-webkit-background-size: cover;
-		background-position: 50% 50%;
-	}
-	.testimoials-overlay{
-		background-color: rgba(31,31,31,0.75);
-		padding-top: 80px;
-		padding-bottom: 80px;
-	}
-	
-	.carousel-indicators{
-		bottom: -10px;
-	
-	}
-	
-	.carousel-inner .item img{
-	
-	
-	padding: 3px;
-	}
-	
-	.testimoials-caption{
-		padding-bottom: 70px;
-	}
-	
-	.testimoials-caption h2{
-		color: #129CF3;
-		text-transform: uppercase;
-		font-weight: 900;
-		font-size: 30px;
-		margin-top: 25px;
-	
-	}
-	
-	.testimoials-caption h4{
-	  color: #129CF3;
-	
-	}
-	.testimoials-caption h4 span{
-	color: #D8D8D8;
-	font-style: italic;
-	font-weight: 300;
-	}
-	
-	.testimoials-caption p{
-		color: #D8D8D8;
-		font-size: 18px;
-		line-height: 27px;
-		padding-top: 50px;
-	}
+
+.body {
+    background-color: #FAFAFA;
+}
+
+.body a {
+    text-decoration: none;
+}
+
+.section-title {
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+
+.section-title h2 {
+    position: relative;
+    text-align: center;
+    color: #44487B;
+    text-shadow: 2px 1px #EAECEE;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.section-title h2:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 60px;
+    height: 1px;
+    background-color: #129CF3;
+    margin-left: -30px;
+}
+
+.body h2 {
+    color: #44487B;
+    font-family: 'El Messiri', sans-serif;
+}
+
+.body h3 {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.body h4 {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.body p {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.body a {
+    font-family: 'Tajawal', sans-serif;
+    text-decoration: none;
+}
+
+.body li {
+    font-family: 'Tajawal', sans-serif;
+}
+
+/*===========================================*/
+
+.header {
+    background-image: url("../images/georgie-cobbs-459520-unsplash.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.text-headers p {
+    font-size: 25px;
+}
+
+.log-marg {
+    margin-bottom: 100px;
+}
+
+.logo-nav {
+    width: 50px;
+    height: 50px;
+}
+
+.header-text {
+    margin-top: 20px;
+}
+
+.navbar-right {
+    margin-right: 4000px;
+}
+
+.log-but {
+    margin-top: 30px;
+    border: 1px solid black;
+    width: 130px;
+    transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.btn:hover {
+    background-color: #129cf3;
+}
+
+/*slider */
+
+.silder-text {
+    margin-bottom: 30px;
+}
+
+.item {
+    padding-right: 150px;
+}
+
+ima-back {
+    background-image: url(../images/back.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: 50% 50%;
+}
+
+.subject h4 {
+    position: relative;
+    padding-right: 90px;
+    margin-bottom: 65px;
+    text-align: right;
+    margin-top: 35px;
+}
+
+.icon-right {
+    left: 0;
+    top: -8px;
+    font-size: 40px;
+    color: #129CF3;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+}
+
+.icon-left {
+    right: 0;
+    top: -8px;
+    font-size: 40px;
+    color: #129CF3;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+}
+
+.img-col {
+    align-content: center;
+    background-color: #ffffff;
+    border: solid 1px #819ff7;
+    max-width: 368px;
+    display: inline-block;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 20px;
+    margin: calc(30vh - 120px) auto;
+    box-shadow: -1px 15px 30px -12px black;
+    z-index: 9999;
+    align-content: center;
+}
+
+/*========footor========*/
+
+.footer {
+    background-color: #efefef;
+}
+
+.footer img {
+    margin-top: 6px;
+}
+
+.scoil ul li {
+    display: inline;
+    font-size: 30px;
+    letter-spacing: 6px;
+}
+
+.scoil ul {
+    margin-top: 30px;
+}
+
+.links {
+    margin-top: 30px;
+    margin-right: 100px;
+}
+
+/*==========course deteals =========*/
+
+.deteals li {
+    display: inline;
+    margin-left: 30px;
+}
+
+.rank {
+    float: left;
+}
+
+.checked {
+    color: orange;
+}
+
+.fla {
+    margin-right: 15px;
+}
+
+.course-pic {
+    float: right;
+    background: #fff;
+    padding: 1px;
+    border: 1px solid #dcecf5;
+    box-shadow: 0 0 10px -10px #000;
+    margin-right: 50px;
+}
+
+/*===========Editi page ==========*/
+
+.col-pad {
+    margin-bottom: 20px;
+}
+
+.edit {
+    float: right;
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border: 1px solid #dcecf5;
+    /*819ff7*/
+    max-width: 668px;
+    margin-right: 190px;
+    position: relative;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 0 20px -10px #000;
+    padding-right: 30px;
+}
+
+.info-i {
+    margin-right: 90px;
+}
+
+/*========= profile page ========*/
+
+.bttoun {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.tr {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 60px;
+    background-color: #f8f9f9;
+}
+
+.name {
+    padding-top: 10px;
+    color: #44487B;
+    font-family: 'El Messiri', sans-serif;
+}
+
+.info {
+    margin-top: 40px;
+    margin-right: 150px;
+}
+
+/*=========message =====*/
+
+.hig {
+    height: 450px
+}
+
+/*====creatcourse===*/
+
+.edit-2 {
+    margin-top: 30px;
+    float: right;
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    border: 1px solid #dcecf5;
+    /*819ff7*/
+    max-width: 668px;
+    margin-right: 190px;
+    position: relative;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 0 20px -10px #000;
+    padding-right: 30px;
+}
+
+/*========= coach page ===========*/
+
+.alink {
+    display: inline;
+}
+
+.right a {
+    position: relative;
+    text-align: right;
+}
+
+.left a {
+    float: left;
+    width: 80px;
+}
+
+.part1 i {
+    display: block;
+}
+
+.img-left {
+    float: left;
+    width: 80px;
+    margin-left: 20px;
+}
+
+.flor {
+    float: left;
+    right: 80px;
+}
+
+/*=========== contact ============*/
+
+.siz {
+    font-size: 50px;
+}
+
+.btn-info {
+    padding: 8px 12px;
+    width: 110px;
+}
+
+.for {
+    margin: 10px;
+    margin-right: 0px;
+}
+
+.container-o {
+    border: solid 1px #819ff7;
+    max-width: 768px;
+    margin: 20px auto;
+    position: sticky;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: calc(30vh - 120px) auto;
+    padding: 50px 80px;
+    box-shadow: 0 0 40px -10px #000;
+}
+
+.bck {
+    background-image: url("../images/pattern.jpg");
+}
+
+/*============ nav bar size ==========*/
+
+.navbar-nav li a {
+    font-size: 20px;
+}
+
+/*==============contact us=========*/
+
+.cont input {
+    margin-bottom: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+.cont {
+    padding-right: 60px;
+}
+
+.btnm {
+    margin-top: 10px;
+    padding: 8px 12px;
+    width: 90px;
+}
+
+.mssg {
+    margin-right: 60px;
+    margin-top: 15px;
+    padding-right: 20px;
+}
+
+.contactus {
+    background-color: #44487B;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: 50% 50%;
+    padding-bottom: 50px;
+}
+
+.contactus h2 {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contactus h3 {
+    color: #ffffff;
+}
+
+.contactus h4 {
+    color: #ffffff;
+}
+
+/*===================silder =================*/
+
+.carousel-control {
+    color: #000000;
+    background-color: white;
+}
+
+.carousel-inner:hover {
+    background-color: white;
+}
+
+/*==========add course =====*/
+
+.courseform {
+    margin-top: 10px;
+}
+
+.cour {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.nameheader {
+    margin-top: 30px;
+}
+
+.texlin {
+    display: inline;
+}
+
+.edit-4 {
+    float: right;
+    background: #fff;
+    max-width: 250px;
+    position: relative;
+    border-radius: 8px;
+    max-height: 270px;
+    width: 620px;
+    border: 1px solid #dcecf5;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    margin-right: 150px;
+    padding-right: 30px;
+}
+
+.nm {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+/*===========future =========*/
+
+.testimoials {
+    background-image: url("../images/damian-zaleski-843-unsplash.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: 50% 50%;
+}
+
+.testimoials-overlay {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.selection-1:hover {
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #dcecf5;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+/*===========about =========*/
+
+.container-s {
+    border: solid 1px #819ff7;
+    max-width: 768px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 0 30px -10px #000;
+    margin: calc(30vh - 120px) auto;
+    padding: 50px 80px;
+}
+
+.contactus h1 {
+    color: #44487B;
+    position: relative;
+    text-align: center;
+    text-shadow: 2px 1px #EAECEE;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.about-body {
+    background-image: url("../images/pattern.jpg");
+    padding-top: 30px;
+}
+
+.about_lines h4 {
+    line-height: 1;
+    text-align: justify;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/*===coutch-about==*/
+
+.talk {
+    position: relative;
+    overflow-y: scroll;
+    max-height: 350px;
+    width: 620px;
+    padding: 15px;
+    border: 1px solid #dcecf5;
+    background: #fff;
+}
+
+.about-coutch {
+    float: right;
+    margin-right: 40px;
+}
+
+.card {
+    border: 1px solid #dcecf5;
+    max-width: 300px;
+    margin-top: 55px;
+    float: left;
+    margin-left: 150px;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    background: #fff;
+}
+
+.card title {
+    color: #44487B;
+    font-size: 20px;
+}
+
+.atchevment {
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.about-coutch2 {
+    float: right;
+    overflow-y: scroll;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #dcecf5;
+    max-height: 510px;
+    width: 620px;
+}
+
+.exampls {
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.about-coutch3 {
+    overflow-y: scroll;
+    float: right;
+    background: #fff;
+    padding: 15px;
+    padding-top: 20px;
+    border: 1px solid #dcecf5;
+    max-height: 510px;
+    width: 620px;
+}
+
+/*userprofile*/
+
+.edit-3 {
+    float: right;
+    background: #fff;
+    max-width: 150px;
+    margin-right: 150px;
+    position: relative;
+    border-radius: 8px;
+    position: relative;
+    max-height: 150px;
+    width: 620px;
+    padding: 15px;
+    border: 1px solid #dcecf5;
+}
