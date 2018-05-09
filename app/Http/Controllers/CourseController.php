@@ -8,6 +8,9 @@ use App\CourseFile;
 use Auth;
 
 class CourseController extends Controller{
+    /**
+     * دالة إنشاء كورس جديد
+     */
     function create(Request $request ){
         $fields = $request->except(['photo','intro_video']);
 
@@ -53,9 +56,22 @@ class CourseController extends Controller{
         $course = Course::find($courseId);
     }
 
+     /**
+     * دالة عرض كورس 
+     */
     function view($courseId,Request $request){
         $course = Course::find($courseId);
+        return view('course/view',['id'=>$courseId,'course'=>$course]);
+
+
+
+
+        
+        
         $path = explode('/',$request->path());
+        
+        
+        
         if(sizeof($path) != 3)
             return view('course/course_content',['id'=>$courseId,'course'=>$course]);
         else{
