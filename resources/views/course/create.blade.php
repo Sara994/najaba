@@ -104,7 +104,7 @@
                             <label for="intro_video" class="col-md-4 col-form-label text-md-right">{{ __('main.intro_video') }}</label>
 
                             <div class="col-md-6">
-                                <input pattern="(http(s)?:\/\/)?((w){3}.)?youtube?(\.com)?\/.+v=(.*)" placeholder="https://www.youtube.com/watch?v=" id="intro_video" type="text" class="form-control{{ $errors->has('intro_video') ? ' is-invalid' : '' }}" name="intro_video" value="{{ old('intro_video') }}" required autofocus>
+                                <input pattern="(http(s)?:\/\/)?((w){3}.)?youtube?(\.com)?\/.+v=(.*)" placeholder="https://www.youtube.com/watch?v=" id="intro_video" type="text" class="form-control{{ $errors->has('intro_video') ? ' is-invalid' : '' }}" name="intro_video" value="{{ old('intro_video') }}" autofocus>
 
                                 @if ($errors->has('intro_video'))
                                     <span class="invalid-feedback">
