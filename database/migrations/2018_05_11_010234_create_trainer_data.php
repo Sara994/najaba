@@ -13,7 +13,7 @@ class CreateTrainerData extends Migration
      */
     public function up()
     {
-        Schema::table('trainer_data',function(Blueprint $table){
+        Schema::create('trainer_data',function(Blueprint $table){
             $table->increments('id');
             $table->text('resume')->nullable();
             $table->text('accomplishments')->nullable();
