@@ -21,6 +21,22 @@ class Course extends Model
         return $this->hasMany('App\User','student_course','course_id','student_id');
     }
 
+    function category(){
+        $categories = [
+            '',
+            'التربية والتعليم',
+            'العلوم',
+            'التقنية والتكنولوجيا',
+            'الثقافة والفن',
+            'الطب',
+            'الهندسة',
+            'العلوم الاجتماعية',
+            'الاقتصاد والادارة',
+            'علوم الشريعة'
+        ];
+        return $this->category? $categories[$this->category]:'';
+    }
+
     function trainer(){
         return $this->hasOne('App\User','id','trainer_id');
     }

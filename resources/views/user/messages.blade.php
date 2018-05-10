@@ -8,10 +8,10 @@
                     {{$message->title}}
                 </div>
                 <div class="panel-body">
-                    {{$message->content}}
+                    {!!html_entity_decode($message->content)!!}
                 </div>
             @else
-                <div>No Selected Message</div>
+                <div>قم باختيار رسالة</div>
             @endif
         </div>
         <div class="panel panel-default">

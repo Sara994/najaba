@@ -90,7 +90,11 @@
 
                     <div class="panel-body">
                         <div class="col-md-3">
-                            <img src="{{asset('images/man.png')}}" class="img-responsive" width="100px" height="100px">
+                            @if(isset($course->trainer->profile_picture))
+                            <img src="{{url($course->trainer->profile_picture)}}" class="img-responsive" width="100px" height="100px">
+                            @else
+                                <img src="{{asset('images/man.png')}}" class="img-responsive" width="100px" height="100px">
+                            @endif
                         </div>
                         <div class="text-detels ">
                             <h4><a href="{{url('/user/'. $course->trainer->id)}}">{{$course->trainer->name }} </a><a href="{{url('/user/messages')}}"><i class="fas fa-envelope-square"></i></a></div></h4>
@@ -100,17 +104,11 @@
                         </div>
 
                         <div class="panel-footer">
-
-                            <h3>#</h3>
-
-                            <h4>الثقافه و الفن</h4>
-
+                            <h4>{{$course->category()}}</h4>
                             <span>شارك الدروس </span>
-
                             <i class="fab fa-twitter"></i>
                             <i class="fab fa-facebook-f"></i>
                         </div>
-
                     </div>
                 </div>
             </div>

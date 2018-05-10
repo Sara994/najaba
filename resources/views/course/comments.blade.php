@@ -3,7 +3,7 @@
 
 <div class="col-md-12">
     @foreach($course->comments() as $comment)
-    <div class="row card" style="margin:5px;" >
+    <div class="row card" style="margin:5px;max-width:100%;width:100%" >
         <div style="display:flex;align-items:center;">
             <div>
                 @if($comment->poster()->profile_picture)

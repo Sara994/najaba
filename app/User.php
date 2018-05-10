@@ -39,4 +39,7 @@ class User extends Authenticatable{
     function messages(){
         return Message::where('from_id',$this->id)->orWhere('to_id',$this->id)->get();
     }
+    function trainer_data(){
+        return $this->hasOne('App\TrainerData','id','user_id');
+    }
 }
