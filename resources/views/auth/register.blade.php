@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="width:100%;max-width:100%;margin-left:0px">
                 <div class="card-header">{{ __('main.register') }}</div>
 
                 <div class="card-body">
@@ -42,7 +42,7 @@
                             <label for="student_radio" class="col-md-4 col-form-label text-md-right">{{ __('main.student') }}</label>
 
                             <div class="col-md-6">
-                                <input id="student_radio" type="radio" name="role" value="STUDENT" required>
+                                <input id="student_radio" checked type="radio" name="role" value="STUDENT" required>
                             </div>
                             <label for="trainer_radio" class="col-md-4 col-form-label text-md-right">{{ __('main.trainer') }}</label>
 
