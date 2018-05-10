@@ -82,7 +82,7 @@
                                 </ul>
                                 <ul class="deteals ">
                                     <li><i class="fas fa-calendar-alt"></i> المده :{{$course['duration']}}</li>
-                                    <li class="fla"><i class="fas fa-users"></i> المفاعد: {{$course['number_of_seats']}} </li>
+                                    <li class="fla"><i class="fas fa-users"></i> المقاعد: {{$course['number_of_seats']}} </li>
                                 </ul>
                             </ul>
                         </div>

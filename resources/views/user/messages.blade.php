@@ -26,7 +26,7 @@
                         <input autocomplete="off" id="search_users" type="text" class="form-control for"  placeholder="الى ">
                         <input id="search_user_id" type="hidden" name="to_id" class="form-control for"  placeholder="الى ">
                     </div>
-                    <textarea name="content" rows="5" style="width: 100%;"></textarea>
+                    <textarea id="contentTextArea" name="content" rows="5" style="width: 100%;"></textarea>
                     <input type="submit" name="" class="btn btn-info for" value="ارسل">
                 </form>
             </div>
@@ -50,5 +50,7 @@
 
 <script>
     $(document).ready(function(){autocomplete(document.getElementById('search_users'),'search_user_id')});
+    let contentTextArea = new nicEditor({fullPanel : true}).panelInstance('contentTextArea',{hasPanel : true});
+
 </script>
 @endsection

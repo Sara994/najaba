@@ -1,5 +1,6 @@
 @extends('course.view')
 @section('course_content')
+
 <div class="col-md-12">
     @foreach($course->comments() as $comment)
     <div class="row card" style="margin:5px;" >
@@ -14,7 +15,6 @@
             <div><h4>{{$comment->poster()->name}}</h4></div>
         </div>
         <div >
-            
             <div >
                 <div class="text-commnt">
                     <p>{!!html_entity_decode($comment->comment)!!}</p>
@@ -30,10 +30,13 @@
         @csrf
         <input type="hidden" name="course_id" value="{{$id}}" >
         <div>
-            <textarea name="comment" style="width:100%"></textarea>
+            <textarea id="commentTextArea" name="comment" style="width:100%"></textarea>
         </div>
         <button class="btn btn-default" type="submit">إرسال</button>
     </form>
     @endguest
 </div>
+<script>
+    let commentTextArea = new nicEditor({fullPanel : true}).panelInstance('commentTextArea',{hasPanel : true});
+</script>
 @endsection

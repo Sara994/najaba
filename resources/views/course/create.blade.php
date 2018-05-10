@@ -171,4 +171,11 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    let descriptionTA = new nicEditor({fullPanel : true}).panelInstance('content',{hasPanel : true});
+    let contentTA = new nicEditor({fullPanel : true}).panelInstance('description',{hasPanel : true});
+
+    </script>
 @endsection
