@@ -42,7 +42,7 @@
     <script type="text/javascript" src="{{ asset('/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/bootstrap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/custom.js') }}"></script>
-    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+    {{-- <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> --}}
 </head>
 <body style="display:flex;flex-direction:column;min-height:100vh">
     <header>
