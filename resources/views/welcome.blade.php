@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app')
+@section('content')
 
 <section class="header">
     <div class="header-all">
@@ -262,37 +263,43 @@
         <br><br>
         </section>
 
-<section class="contactus">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-title text-center">
-          <h2>تواصل معنا </h2>
-         
-        </div>
-        <div class="col-md-12">
-          <div class="text-center">
-             <p>نسعد بتواصلكم..</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-10">
-        <form class="cont">
-          <div class="col-md-6">
-            <input type="text" name="" placeholder="الاسم" class="form-control">
-          <input type="text" name="" placeholder="الايميل" class="form-control">
-          <input type="text" name="" placeholder="الموضوع" class="form-control">
-          </div>
-          <div class="col-md-6">
-            <textarea style="background-color:#FFF" class="form-control" rows="5" placeholder="الرساله"></textarea>
-          </div>
-         <div class="text-center">
-            <input type="submit" name="" class="btn btn-info btnm" value="ارسال">
-         </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+        <section class="contactus">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                              <div style="text-align:center">
+                      <div class="section-title text-center">
+                        <span><h2>تواصل معنا </h2></span>
+                      </div>
+                              <h3>بإمكانك التواصل مع ادارة الموقع للإجابة على استفسارتك الخاصة </h3>
+                          </div>
+                      <div class="col-md-12">
+                                  <div class="mssg">
+                                  <!--	<div class="text-align">
+                           <h3>نسعد بتواصلكم..</h3>
+                              </div> -->
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                      <form class="cont">
+                        <div class="col-md-6">
+                          <input type="text" name="" placeholder="الاسم" class="form-control">
+                        <input type="text" name="" placeholder="الايميل" class="form-control">
+                        <input type="text" name="" placeholder="الموضوع" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                                      <div class="mssg">
+                          <textarea class="form-control" rows="5" placeholder="الرساله"></textarea>
+                        </div>
+                       <div class="text-center">
+                          <input type="submit" name="" class="btn btn-info btnm" value="ارسال">
+                       </div>
+              </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
 @endsection
