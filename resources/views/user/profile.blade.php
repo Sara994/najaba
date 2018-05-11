@@ -117,18 +117,18 @@
 @else
 
 <div class="edit-4">
-		<div class="col-md-11">
-        <img src="{{$user->profile_picture ? url($user->profile_picture): asset('images/man.png')}}" class="img-responsive center-block" width="100px" height="100px">
+    <div class="col-md-11">
+    <img src="{{$user->profile_picture ? url($user->profile_picture): asset('images/man.png')}}" class="img-responsive center-block" width="100px" height="100px">
 </div>
 
 <div class="nm">
 <div class="text-center">
 		<h2>{{$user->name}}</h2>
-		<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>
+		@if(isset(Auth::user() && $user->id == Auth::user()->id))<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>@endif
 </div>
 </div>
 </div>
-
+{{-- 
 <section >
         <div class="container">
           <div class="row">
@@ -201,7 +201,7 @@
           </div>
         </div>
           <br><br>
-</section>
+</section> --}}
 
 @endif
 
