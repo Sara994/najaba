@@ -83,38 +83,6 @@
         <br>
         <br>
         <br>
-
-        <!--footer-->
-        <section class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 ">
-                        <div class="links">
-                            <h3>روابط الموقع :</h3>
-                            <h4><a href="contact.html">تواصل معنا </a></h4>
-                            <h4><a href="question.html"> الأسئلة الشائعة</a></h4>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="scoil">
-                            <ul>
-                                <h3>تابعونا على : </h3>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-snapchat"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 flor">
-                        <img src="../images/footor.png" class="img-responsive" width="250px" height="250px">
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </div>
 @endsection
