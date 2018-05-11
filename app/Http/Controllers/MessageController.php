@@ -18,7 +18,7 @@ class MessageController extends Controller{
     }
 
     function reply(Request $request){
-        $msg_id = $request->msg_id();
+        $msg_id = $request->msg_id;
         $message = Message::find($msg_id);
         $fields['from_id'] = Auth::user()->id;
         $fields['to_id'] = $fields['from_id'] == $message->from->id ? $message->from->id : $message->to->id;
