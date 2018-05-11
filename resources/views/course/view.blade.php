@@ -62,11 +62,11 @@
                             @if(null !== Auth::user() && Auth::user()->role == 'STUDENT')
                                 @php $is_registered =  App\StudentCourse::where('course_id',$course->id)->where('student_id',Auth::user()->id)->first()   @endphp
                                 @if($is_registered === null)
-                                    <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info">
+                                    <a href="#" data-toggle="modal" data-target="#Login" class="btn btn-info">
                                         تسجيل
                                     </a>
                                 @else
-                                    <a href="#" class="btn btn-info">
+                                    <a style="width:auto" href="#" class="btn btn-info">
                                         انت مسجل في هذه الدوره
                                     </a>
                                 @endif
@@ -159,19 +159,19 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-2">
-                            <input type="number" name="" placeholder="االسجل المدني  " class="form-control">
+                            <input required type="number" name="" placeholder="االسجل المدني  " class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-2">
-                            <input type="number" name="" placeholder="السجل الاكاديمي" class="form-control">
+                            <input required type="number" name="" placeholder="السجل الاكاديمي" class="form-control">
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">اغلاق</button>
-                <button type="button" class="btn btn-primary">تسجيل دخول </button>
+                <a href="{{url('course/'. $course->id .'/register')}}" class="btn btn-info">تسجيل دخول </a>
             </div>
         </div>
     </div>
