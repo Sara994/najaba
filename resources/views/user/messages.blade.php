@@ -9,8 +9,8 @@
     <div class="nm">
         <div class="text-center">
             <h2>{{$user->name}}</h2>
-            @if(isset(Auth::user() && $user->id == Auth::user()->id))<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>@endif        </div>
-    </div>
+            @if(isset(Auth::user()) && $user->id == Auth::user()->id)<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>@endif
+        </div>
 </div>
 
 <section >
