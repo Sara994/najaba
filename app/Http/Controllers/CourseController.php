@@ -34,6 +34,29 @@ class CourseController extends Controller{
         return redirect("user/courses");
     }
 
+    function edit($courseId,Request $request ){
+        $course = Course::find($courseId);
+        if(Auth::user()->id == $course->trainer->id){
+            $fields = $request->except(['photo','intro_video']);
+
+            $url = $request->intro_video;
+            parse_str( parse_url( $url, PHP_URL_QUERY ), $vars );
+            if(isset($vars['v'])){
+                $fields['intro_video'] = "https://www.youtube.com/embed/" . $vars['v'];
+            }
+            
+            $fields['trainer_id'] = Auth::user()->id;
+            if($request->photo){
+                $path = $request->photo->store('photos');
+                $fields['photo'] = $path;
+            }
+            $course->update($fields);
+        }
+
+        return redirect("user/courses");
+    }
+
+
     function addFiles($courseId,Request $request){
         $filenames = [];
         
@@ -62,8 +85,6 @@ class CourseController extends Controller{
 
     function delete($courseId){
         $course = Course::find($courseId);
-        Log::info($course->trainer);
-        Log::info(Auth::user()->id);
         if(Auth::user()->id == $course->trainer->id){
             StudentCourse::where('course_id',$courseId)->delete();
             Cmment::where('course_id',$courseId)->delete();
@@ -71,6 +92,17 @@ class CourseController extends Controller{
             CourseFile::where('course_id',$courseId)->delete();
             Course::where('id',$courseId)->delete();
         }
+        return redirect('user/courses');
+    }
+
+    function archieve($courseId){
+        $course = Course::find($courseId);
+        Log::info("ARCHIEVED: " . $course->archieved);
+        if(Auth::user()->id == $course->trainer->id){
+            $course->archieved = true;
+            $course->save();
+        }
+        Log::info("AFTER: " . $course->archieved);
         return redirect('user/courses');
     }
 

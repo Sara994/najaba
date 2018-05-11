@@ -8,7 +8,9 @@
             @else
             @if( Auth::user()->id == $course->trainer->id )
             <div style="position:absolute;left:10%;top:0px;z-index:1000">
+                <a href="{{url('course/' . $course->id . '/edit')}}" class="btn btn-info">تعديل</a>
                 <a href="{{url('course/' . $course->id . '/delete')}}" class="btn btn-danger">حذف</a>
+                <a href="{{url('course/' . $course->id . '/archieve')}}" class="btn btn-danger">أرشفة</a>
             </div>
             @endif
             @endguest

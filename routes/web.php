@@ -45,7 +45,13 @@ Route::group(['prefix'=>'course'],function(){
         return redirect('course/'.$courseId);
     });
     Route::get('/{id}', 'CourseController@view');
-    Route::get('/{id}/delete', 'CourseController@delete');
+    Route::get('/{id}/delete', 'CourseController@delete')->middleware('auth');
+    Route::get('/{id}/edit', function($courseId){
+        $course = App\Course::find($courseId);
+        return view('course/edit',['id'=>Auth::user()->id, 'course'=>$course]);
+    })->middleware('auth');
+    Route::post('/{id}/edit','CourseController@edit')->middleware('auth');
+    Route::get('/{id}/archieve','CourseController@archieve')->middleware('auth');
 });
 
 Route::group(['prefix'=>'user'],function(){
