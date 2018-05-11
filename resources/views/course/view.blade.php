@@ -12,13 +12,13 @@
             </div>
             @endif
             @endguest
-            <div class="col-md-12">
+            {{-- <div class="col-md-12">
                 @if($course->photo)
                     <img src="{{url($course->photo)}}" class="img-responsive center-block img-circle" width="200px" height="200px">
                 @else
                     <img src="{{asset('images/placeholder.gif')}}" class="img-responsive center-block img-circle" width="200px" height="200px">
                 @endif
-            </div>
+            </div> --}}
             <div class="col-md-12 text-center">
                 <div class="section-title">
                     <h2>{{$course['name']}}</h2>
@@ -32,7 +32,7 @@
     <div class="ccontainer">
         <div class="row">
             <div class="col-md-7">
-                <nav class="navbar navbar-default">
+                <nav class="navbar navbar-default" style="background-color: #FFF">
                     <ul class="nav navbar-nav" style="display:flex;flex-direction:row">
                         <li><a href="{{url('course/'. $id .'/details')}}">الوصف</a></li>
                         <li><a href="{{url('course/'. $id .'/course_content')}}" class="active">المحتوى</a></li>
