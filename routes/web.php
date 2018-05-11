@@ -105,5 +105,6 @@ Route::get('photos/{filename}', function ($filename){
 });
 
 Route::post('message', 'MessageController@create');
+Route::post('message/reply', 'MessageController@reply');
 Route::get('/course/{courseId}/message/create', function(){return view('message/create');});
 

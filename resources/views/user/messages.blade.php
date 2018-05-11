@@ -54,13 +54,14 @@
                             @endif
                         </div>
                         <div class="panel-body">
-                            <form method="post" action="{{url('message')}}">
+                            <form method="post" action="{{url('message/reply')}}">
                                 @csrf
                                 {{-- <div>
                                     <input autocomplete="off" type="text" name="title" class="form-control for"  placeholder="عنوان الرسالة">
                                     <input autocomplete="off" id="search_users" type="text" class="form-control for"  placeholder="الى ">
                                     <input id="search_user_id" type="hidden" name="to_id" class="form-control for"  placeholder="الى ">
                                 </div> --}}
+                                <input value="{{$message->id}}" type="hidden" name="msg_id" class="form-control for"  placeholder="الى ">
                                 <textarea id="replyTextArea" name="reply" rows="5" style="width: 100%;"></textarea>
                                 <input type="submit" name="" class="btn btn-info for" value="ارسل">
                             </form>
@@ -73,10 +74,8 @@
                             <span>الرسائل</span>
                             @foreach($user->messages() as $msg)
                                 @php $sender = $msg->from->id == Auth::user()->id ? $msg->to: $msg->from @endphp
-
                                 <div class="list-group-item">
                                     <a href="{{url('user/messages/'.$msg->id)}}">{{$msg->title}}</a>
-
                                     <div><sub><a href="{{url('user/' . $sender->id)}}"> {{$sender->name}}</a></sub></div>
                                 </div>
                             @endforeach

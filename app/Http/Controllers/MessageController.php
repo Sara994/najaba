@@ -17,6 +17,20 @@ class MessageController extends Controller{
         return redirect('/user/messages');
     }
 
+    function reply(Request $request){
+        $msg_id = $request->msg_id();
+        $message = Message::find($msg_id);
+        $fields['from_id'] = Auth::user()->id;
+        $fields['to_id'] = $fields['from_id'] == $message->from->id ? $message->from->id : $message->to->id;
+
+        $fields['content'] = $request->reply;
+        $fields['reply_to'] = $msg_id;
+        $fields['title'] = $message->title;
+        Message::create($fields);
+
+        return redirect('/user/messages');
+    }
+
     function list(){
         Message::list();
     }
