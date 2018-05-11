@@ -9,9 +9,10 @@
 
     <div class="nm">
         <div class="text-center">
-                <h2>{{$user->name}}</h2>
-                @if(!is_null(Auth::user()) && $user->id == Auth::user()->id)<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>@endif
-            </div>
+            <h2>{{$user->name}}</h2>
+            @if(!is_null(Auth::user()) && $user->id == Auth::user()->id)<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>@endif
+        </div>
+    </div>
 </div>
 
 
