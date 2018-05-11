@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(count($courses) == 0)
+        لا يوجد أي دورات
+    @endif
     @foreach($courses as $course)
         <div class="col-md-3 col-sm-6 col-xs-12">
             <a href="{{url('course/'.$course->id)}}">
