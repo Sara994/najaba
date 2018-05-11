@@ -1,4 +1,5 @@
-@extends('user') @section('user_content')
+@extends('layouts.app')
+@section('content')
 @if($user->role == 'STUDENT')
 <div class="container">
     <div class="row">
@@ -74,101 +75,103 @@
 
 @else
 
-<section class="courseform">
+
+
+<section>
         <div class="container">
-            <div class="edit-2 body">
-                <div class="row">
-                    <div class="col-md-12 ">
-                        <div class="text-center section-title">
-                            <h2>تعديل البيانات الأكاديمية</h2>
-                        </div>
-                    </div>
-                    <div class="col-md-11">
-                        <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('user/resume') }}">
-                            @csrf
-                            <div class="form-group row">
-                                <label for="occupation" class="col-md-4 col-form-label text-md-right">المهنة</label>
-    
-                                <div class="col-md-6">
-                                    <input value="{{$user->trainer_data ? $user->trainer_data->occupation :''}}" id="occupation" type="text" class="form-control{{ $errors->has('occupation') ? ' is-invalid' : '' }}" name="occupation" value="{{ old('occupation') }}" required autofocus>
-    
-                                    @if ($errors->has('occupation'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('occupation') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-md-7">
-                                <h4>التواصل الاجتماعي</h4>
-                                <div class="col-md-6 col-pad">
-                                    <input type="text" name="twitter" value="{{$user->trainer_data}}" class="form-control" placeholder="Twitter">
-                                </div>
-                                <div class="col-md-6 col-pad">
-                                    <input type="text" name="instagram" value="{{$user->trainer_data}}" class="form-control" placeholder="Instagram">
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="resume" class="col-md-4 col-form-label text-md-right">السيرة الذاتية</label>
-    
-                                <div class="col-md-8">
-                                    <textarea rows="10" id="resume" class="form-control{{ $errors->has('resume') ? ' is-invalid' : '' }}" name="resume" value="{{ old('resume') }}">
-                                            {!! html_entity_decode($user->trainer_data ? $user->trainer_data->resume :'') !!}
-                                    </textarea>
-    
-                                    @if ($errors->has('resume'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('resume') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="accomplishments" class="col-md-4 col-form-label text-md-right">الانجازات</label>
-    
-                                <div class="col-md-8">
-                                    <textarea rows="10" id="accomplishments" class="form-control{{ $errors->has('accomplishments') ? ' is-invalid' : '' }}" name="accomplishments" value="{{ old('accomplishments') }}">
-                                        {!! html_entity_decode($user->trainer_data ? $user->trainer_data->accomplishments :'') !!}
-                                    </textarea>
-    
-                                    @if ($errors->has('accomplishments'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('accomplishments') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="samples" class="col-md-4 col-form-label text-md-right">نماذج من الأعمال</label>
-    
-                                <div class="col-md-8">
-                                    <textarea rows="10" id="samples" class="form-control{{ $errors->has('samples') ? ' is-invalid' : '' }}" name="samples" value="{{ old('samples') }}">
-                                            {!! html_entity_decode($user->trainer_data ? $user->trainer_data->samples :'') !!}
-                                    </textarea>
-    
-                                    @if ($errors->has('samples'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('samples') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('main.save') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                  <div class="edit">
+          <div class="row">
+                  <div class="info-i">
+            <div class="col-md-10">
+              <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('user/edit') }}">
+                <h4>البيانات الشخصية </h4>
+                <div class="col-md-10">
+      
+                  <div class="col-md-6 col-pad">
+                    <input type="text" value="{{$user->name}}" name="name" class="form-control" placeholder="الاسم">
+      
+                  </div>
+                  <div class="col-md-6 col-pad">
+                    <input type="text" value="{{$user->trainer_data->occupation}}" name="occupation" class="form-control" placeholder="المهنه">
+                  </div>
+                              <br><br>
                 </div>
+      
+                 <div class="col-md-10">
+      
+                  <div class="col-md-6 col-pad">
+                    <input type="text" value="{{$user->nationality}}" name="nationality" class="form-control" placeholder="الجنسية">
+      
+                  </div>
+                   <div class="col-md-6 col-pad">
+                    <input type="text" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد">
+                  </div>
+      
+                </div>
+                
+                <div class="col-md-10">
+                   <h4>التواصل الاجتماعي </h4>
+                  <div class="col-md-6 col-pad">
+                    <input type="text" value="{{$user->trainer_data->twitter}}" name="twitter" class="form-control" placeholder="Twitter">
+                  </div>
+                  <div class="col-md-6 col-pad">
+                    <input type="text" name="instagram" value="{{$user->trainer_data->instagram}}" class="form-control" placeholder="Instagram">
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <h4 > الصورة الشخصيه</h4>
+                  <div class="col-md-6 col-pad">
+                    <input type="file" name="profile_picture" class="form-control" placeholder="الصورة الشخصية">
+      
+                  </div>
+      
+                </div>
+      
+      
+                    <div class="col-md-10">
+                                      <h4 > السيرة الذاتية</h4>
+                                      <div class="col-md-12 col-pad">
+                                        <textarea id="resume" name="resume" class="form-control" rows="5">
+                                            {!! html_entity_decoder($user->trainer_data->resume) !!}}
+                                        </textarea>
+      
+                                      </div>
+      
+                                    </div>
+      
+                                    <div class="col-md-10">
+                                      <h4 >الانجازات</h4>
+                                      <div class="col-md-12 col-pad">
+                                        <textarea id="accomplishments" name="accomplishments" class="form-control" rows="5">
+                                            {!! html_entity_decoder($user->trainer_data->accomplishments) !!}}
+                                        </textarea>
+      
+                                      </div>
+      
+                                    </div>
+      
+                                    <div class="col-md-10">
+                                      <h4 >نماذج الاعمال </h4>
+                                      <div class="col-md-12 col-pad">
+                                        <textarea id="samples" name="samples" class="form-control" rows="5">
+                                            {!! html_entity_decoder($user->trainer_data->samples) !!}}
+                                        </textarea>
+                                      </div>
+                                    </div>
+                                <div class="col-md-10">
+                               <br><br>
+                   <input type="submit" name="" class="btn btn-success btn-block" value="حفظ">
+                 </div>
+              </form>
             </div>
+              </div>
+          </div>
+          </div>
         </div>
+          <br><br>
+          <br><br>
     </section>
+
     <script>
         let accomplishmentsTA = new nicEditor({fullPanel : true}).panelInstance('accomplishments',{hasPanel : true});
         let samplesTA = new nicEditor({fullPanel : true}).panelInstance('samples',{hasPanel : true});

@@ -76,6 +76,14 @@ class UserController extends Controller{
         }
         Auth::user()->update($userData);
 
+        $trainerData = $request->only(['resume','accomplishments','samples','occupation','instagram','twitter']);
+        $trainerData['user_id'] = Auth::user()->id;
+        $data = TrainerData::where('user_id',Auth::user()->id)->first();
+        if(is_null($data)){
+            TrainerData::create($trainerData);
+        }else{
+            $data->update($trainerData);
+        }
         return redirect('user/profile');
     }
 
