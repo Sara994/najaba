@@ -54,6 +54,7 @@
                             @endif
                         </div>
                         <div class="panel-body">
+                            @if(isset($message))
                             <form method="post" action="{{url('message/reply')}}">
                                 @csrf
                                 {{-- <div>
@@ -65,6 +66,7 @@
                                 <textarea id="replyTextArea" name="reply" rows="5" style="width: 100%;"></textarea>
                                 <input type="submit" name="" class="btn btn-info for" value="ارسل">
                             </form>
+                            @endif
                         </div>
                     </div>
                 </div>
