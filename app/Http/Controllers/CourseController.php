@@ -64,13 +64,13 @@ class CourseController extends Controller{
         $course = Course::find($courseId);
         Log::info($course->trainer);
         Log::info(Auth::user()->id);
-        // if(Auth::user()->id == $course->trainer->id){
+        if(Auth::user()->id == $course->trainer->id){
             StudentCourse::where('course_id',$courseId)->delete();
             Cmment::where('course_id',$courseId)->delete();
             Message::where('course_id',$courseId)->delete();
             CourseFile::where('course_id',$courseId)->delete();
             Course::where('id',$courseId)->delete();
-        // }
+        }
         return redirect('user/courses');
     }
 
