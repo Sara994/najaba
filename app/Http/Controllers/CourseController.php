@@ -96,6 +96,10 @@ class CourseController extends Controller{
         $courses = Course::orderby('created_at','desc')->get();
         return view("courses_list",['courses'=>$courses]);
     }
+    function listByCategory($categoryId){
+        $courses = Course::where('category',$categoryId)->orderby('created_at','desc')->get();
+        return view("courses_list",['courses'=>$courses]);
+    }
 
     function search(Request $request){
         $courses = Course::where('name','like',"%$request->needle%")->orderby('created_at','desc')->get();;

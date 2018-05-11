@@ -21,6 +21,7 @@ Route::get('/course', function(){
 });
 
 Route::post('/course/create', 'CourseController@create');
+Route::get('/course/category/{id}','CourseController@listByCategory');
 
 Route::group(['prefix'=>'course'],function(){
     Route::get('create', function(){
