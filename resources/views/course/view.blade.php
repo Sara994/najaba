@@ -72,6 +72,18 @@
                                 @endif
 
                             @endif
+                            {{-- <span class="starRating">
+                                <input data-id="rating5" type="radio" name="star_num" value="5">
+                                <label data-id="rating5">5</label>
+                                <input data-id="rating4" type="radio" name="star_num" value="4">
+                                <label data-id="rating4">4</label>
+                                <input data-id="rating3" type="radio" name="star_num" value="3">
+                                <label data-id="rating3">3</label>
+                                <input data-id="rating2" type="radio" name="star_num" value="2">
+                                <label data-id="rating2">2</label>
+                                <input data-id="rating1" type="radio" name="star_num" value="1">
+                                <label data-id="rating1">1</label>
+                            </span> --}}
                             <div class="rank">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
