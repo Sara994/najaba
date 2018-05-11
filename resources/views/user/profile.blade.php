@@ -55,8 +55,8 @@
                                         <img src="{{$course->photo ? url($course->photo):url('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
                                     </div>
                                     <div class="panel-body text-center">
-                                        <a href="course_deteles.html"><p>{{$course->name}}</p></a>
-                                        <a href="coach.html"> <p>{{$course->trainer->name}}</p></a>
+                                            <a href="{{url('/course/' . $course->id)}}"><p>{{$course->name}}</p></a>
+                                            <a href="{{url('/user/' . $course->trainer->id)}}"> <p>{{$course->trainer->name}}</p></a>
                                         <p>عدد المقاعد :{{$course->number_of_seats}}</p>
                                         @php $rating = $course->rating() @endphp
                                         <div class="rank ">
@@ -81,8 +81,8 @@
                                         <img src="{{$course->photo ? url($course->photo):url('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
                                     </div>
                                     <div class="panel-body text-center">
-                                        <a href="course_deteles.html"><p>{{$course->name}}</p></a>
-                                        <a href="coach.html"> <p>{{$course->trainer->name}}</p></a>
+                                            <a href="{{url('/course/' . $course->id)}}"><p>{{$course->name}}</p></a>
+                                            <a href="{{url('/user/' . $course->trainer->id)}}"> <p>{{$course->trainer->name}}</p></a>
                                         <p>عدد المقاعد :{{$course->number_of_seats}}</p>
                                         @php $rating = $course->rating() @endphp
                                         <div class="rank ">
