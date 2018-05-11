@@ -28,8 +28,8 @@ class User extends Authenticatable{
         'password', 'remember_token',
     ];
 
-    function courses(){
-        return Course::where('trainer_id',$this->id)->get();
+    function courses($offset=0,$limit=50){
+        return Course::where('trainer_id',$this->id)->limit($limit)->offset($offset)->get();
     }
 
     function attending_courses(){

@@ -26,6 +26,15 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-md-7">
+                            <h4>التواصل الاجتماعي</h4>
+                            <div class="col-md-6 col-pad">
+                                <input type="text" name="twitter" value="{{$user->trainer_data}}" class="form-control" placeholder="Twitter">
+                            </div>
+                            <div class="col-md-6 col-pad">
+                                <input type="text" name="instagram" value="{{$user->trainer_data}}" class="form-control" placeholder="Instagram">
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="resume" class="col-md-4 col-form-label text-md-right">السيرة الذاتية</label>

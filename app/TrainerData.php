@@ -8,7 +8,7 @@ class TrainerData extends Model
 {
     protected $table = "trainer_data";
 
-    protected $fillable = ['resume','accomplishments','samples','user_id','occupation'];
+    protected $fillable = ['resume','accomplishments','samples','user_id','occupation','twitter','instagram'];
 
     function user(){
         return $this->hasOne('App\User','user_id','id');

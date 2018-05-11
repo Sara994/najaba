@@ -21,6 +21,19 @@ class Course extends Model
         return $this->hasMany('App\User','student_course','course_id','student_id');
     }
 
+    function rating(){
+        $students = StudentCourse::where('course_id',$this->id)->get();
+        $count = 0;
+        $total = 0;
+        foreach($students as $student){
+            if($student->rating > -1){
+                $count++;
+                $total += $student->rating;
+            }
+        }
+        return $count == 0 ? 0: $total/$count;
+    }
+
     function category(){
         $categories = [
             '',
