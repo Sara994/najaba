@@ -2,7 +2,7 @@
 
 @section('content')
     @if(count($courses) == 0)
-        لا يوجد أي دورات
+        <div style="text-align:center">لا يوجد أي دورات</div>
     @endif
     @foreach($courses as $course)
         <div class="col-md-3 col-sm-6 col-xs-12">
