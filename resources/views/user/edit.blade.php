@@ -84,6 +84,7 @@
                   <div class="info-i">
             <div class="col-md-10">
               <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('user/edit') }}">
+                @csrf
                 <h4>البيانات الشخصية </h4>
                 <div class="col-md-10">
       
@@ -132,7 +133,7 @@
                                       <h4 > السيرة الذاتية</h4>
                                       <div class="col-md-12 col-pad">
                                         <textarea id="resume" name="resume" class="form-control" rows="5">
-                                            {!! html_entity_decoder($user->trainer_data->resume) !!}}
+                                            {!! html_entity_decode($user->trainer_data->resume) !!}
                                         </textarea>
       
                                       </div>
@@ -143,7 +144,7 @@
                                       <h4 >الانجازات</h4>
                                       <div class="col-md-12 col-pad">
                                         <textarea id="accomplishments" name="accomplishments" class="form-control" rows="5">
-                                            {!! html_entity_decoder($user->trainer_data->accomplishments) !!}}
+                                            {!! html_entity_decode($user->trainer_data->accomplishments) !!}
                                         </textarea>
       
                                       </div>
@@ -154,7 +155,7 @@
                                       <h4 >نماذج الاعمال </h4>
                                       <div class="col-md-12 col-pad">
                                         <textarea id="samples" name="samples" class="form-control" rows="5">
-                                            {!! html_entity_decoder($user->trainer_data->samples) !!}}
+                                            {!! html_entity_decode($user->trainer_data->samples) !!}
                                         </textarea>
                                       </div>
                                     </div>
