@@ -213,16 +213,18 @@
 </section>
 <!-- Section  for Unviersity -->
 <section>
-    <div class="container-rem">
-        <div class="row">
+    <div class="container">
+          <div class="row">
             <div class="col-md-12 section-title">
-                <h2>شركاء النجاح</h2>
+              <h2 style="font-size:3.5vw">شركاء النجاح</h2>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-8 text-center col-md-offset-2">
-                    <img src="{{asset('images/kau.jpg')}}" class="" width="250px" height="250px">
-                </div>
+            <div align="center" style="margin:auto">
+            <div class="img-col">
+              <div class="col-md-8 text-align:center">
+                <img src="{{asset('images/kau.jpg')}}" class="" width="250px" height="250px">
+              </div>
             </div>
+          </div>
         </div>
     </div>
 </section>

@@ -143,6 +143,8 @@
             </div>
             <div class="col-md-4">
                 <div class="scoil">
+                        <h3>تابعونا على : </h3>
+
                 <ul>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
