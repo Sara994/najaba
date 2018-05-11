@@ -54,13 +54,21 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('profile','UserController@my')->middleware('auth');
     Route::get('edit','UserController@my')->middleware('auth');
     Route::post('edit','UserController@edit')->middleware('auth');
-
+    Route::get('/editresume',function(){
+        $user = Auth::user();
+        return view('user/editresume',['user'=>$user]);
+    })->middleware('auth');
+    
+    Route::post('resume','UserController@addTrainerData')->middleware('auth');
     
     Route::get('/{id}','UserController@view');
     Route::get('/{id}/courses','UserController@view');
     Route::get('/{id}/messages',function(){return redirect('user/messages');});
     Route::get('/{id}/profile','UserController@view');
-
+    Route::get('/{id}/resume',function($userId){
+        $user = App\User::find($userId);
+        return view('user/resume',['user'=>$user]);
+    });
     Route::get('search/{needle}','UserController@search');
 });
 

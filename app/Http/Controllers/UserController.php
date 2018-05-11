@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Message;
+use App\TrainerData;
 use Auth;
 
 class UserController extends Controller{
@@ -44,6 +45,18 @@ class UserController extends Controller{
             return view('user/'.$path,['path'=>$path, 'id'=>$userId,'user'=>$user]);
         }
     }
+
+    function addTrainerData(Request $request){
+        $fields = $request->all();
+        $fields['user_id'] = Auth::user()->id;
+        $data = TrainerData::where('user_id',Auth::user()->id)->first();
+        if(is_null($data)){
+            TrainerData::create($fields);
+        }else{
+            $data->update($fields);
+        }
+        return redirect('user/profile');
+    }
     function edit(Request $request){
         $userData = [
             'name' => $request->name,
@@ -55,16 +68,14 @@ class UserController extends Controller{
             'university' => $request->university,
             'university_id' => $request->university_id,
             'major' => $request->major,
-            'level' => $request->level
+            'level' => $request->level,
+            'nationality' => $request->nationality
         ];
         if($request->file('profile_picture')){
             $userData['profile_picture'] = $request->file('profile_picture')->store('photos');
         }
-        
         Auth::user()->update($userData);
 
-
-        
         return redirect('user/profile');
     }
 

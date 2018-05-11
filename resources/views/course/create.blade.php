@@ -170,12 +170,9 @@
             </div>
         </div>
     </div>
-</div>
-
+</section>
 <script>
-
     let descriptionTA = new nicEditor({fullPanel : true}).panelInstance('content',{hasPanel : true});
     let contentTA = new nicEditor({fullPanel : true}).panelInstance('description',{hasPanel : true});
-
-    </script>
+</script>
 @endsection

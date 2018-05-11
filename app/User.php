@@ -16,7 +16,7 @@ class User extends Authenticatable{
      */
     protected $fillable = [
         'name', 'email', 'password','role','age','phone_number','national_id','address','university',
-        'university_id','major','level','profile_picture'
+        'university_id','major','level','profile_picture','nationality'
     ];
 
     /**
@@ -40,6 +40,6 @@ class User extends Authenticatable{
         return Message::where('from_id',$this->id)->orWhere('to_id',$this->id)->get();
     }
     function trainer_data(){
-        return $this->hasOne('App\TrainerData','id','user_id');
+        return $this->hasOne('App\TrainerData','user_id','id');
     }
 }

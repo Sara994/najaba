@@ -11,7 +11,7 @@
                         <input type="text" name="name" value="{{$user->name}}" class="form-control" placeholder="{{__('main.name')}}">
                     </div>
                     <div class="col-md-6 col-pad">
-                        <input type="text" name="age" value="{{$user->age}}" class="form-control" placeholder="العمر">
+                        <input type="number" name="age" value="{{$user->age}}" class="form-control" placeholder="العمر">
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -20,6 +20,11 @@
                     </div>
                     <div class="col-md-6 col-pad">
                         <input type="text" name="phone_number" value="{{$user->phone_number}}" class="form-control" placeholder="رقم الجوال">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="col-md-6 col-pad">
+                        <input type="text" name="nationality" value="{{$user->nationality}}" class="form-control" placeholder="الجنسية">
                     </div>
                 </div>
                 <div class="col-md-7">
