@@ -97,6 +97,7 @@
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{url('/user/profile')}}">الملف الشخصي</a>
+                                        <a class="dropdown-item" href="{{url('/user/edit')}}">إعدادات</a>
                                         <a class="dropdown-item" href="{{url('/user/courses')}}">الدورات</a>
                                         <a class="dropdown-item" href="{{url('/user/messages')}}">الرسائل</a>
 

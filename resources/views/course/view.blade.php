@@ -97,7 +97,7 @@
                             @endif
                         </div>
                         <div class="text-detels ">
-                            <h4><a href="{{url('/user/'. $course->trainer->id)}}">{{$course->trainer->name }} </a><a href="{{url('/user/messages')}}"><i class="fas fa-envelope-square"></i></a></div></h4>
+                            <h4><a href="{{url('/user/'. $course->trainer->id)}}">{{$course->trainer->name }} </a></div></h4>
                             <p>{{$course->trainer->university}}-{{$course->trainer->major}}</p>
 
                             <div></div>
