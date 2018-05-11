@@ -37,8 +37,7 @@
         </div>
         <div class="col-md-12">
             <div class="row">
-
-                @php $mycourses = $user->role == "STUDENT" ? $user->attending_courses: $user->courses; @endphp
+                @php $mycourses = $user->role == "STUDENT" ? $user->attending_courses: $user->courses(); @endphp
                 @foreach($mycourses as $course)
                 <div class="col-md-3 ">
                     <div class="panel panel-default">
