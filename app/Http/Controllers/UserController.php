@@ -78,6 +78,7 @@ class UserController extends Controller{
 
         $trainerData = $request->only(['resume','accomplishments','samples','occupation','instagram','twitter']);
         $trainerData['user_id'] = Auth::user()->id;
+
         $data = TrainerData::where('user_id',Auth::user()->id)->first();
         if(is_null($data)){
             TrainerData::create($trainerData);
