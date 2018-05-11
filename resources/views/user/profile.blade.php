@@ -132,7 +132,7 @@
 <section >
         <div class="container">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="navbar navbar-light" style="background-color: #ffffff; border-color:#EAECEE">
                 <ul style="display:flex;flex-direction:row" class="nav navbar-nav">
                   <li><a href="{{url('/user/profile')}}">الملف الشخصي</a></li>
@@ -141,7 +141,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-12">
       
                 <div class="panel panel-default">
                   <div class="panel-heading">

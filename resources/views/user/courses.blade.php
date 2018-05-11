@@ -10,16 +10,16 @@
 
 
 <div class="edit-4">
-		<div class="col-md-11">
+    <div class="col-md-11">
         <img src="{{$user->profile_picture ? url($user->profile_picture): asset('images/man.png')}}" class="img-responsive center-block" width="100px" height="100px">
-</div>
+    </div>
 
-<div class="nm">
-<div class="text-center">
-		<h2>{{$user->name}}</h2>
-		<a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>
-</div>
-</div>
+    <div class="nm">
+        <div class="text-center">
+                <h2>{{$user->name}}</h2>
+                <a href="{{url('/user/edit')}}" class="btn btn-info text-center bttoun">تعديل</a>
+        </div>
+    </div>
 </div>
 
 
@@ -30,7 +30,7 @@
 <section >
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="navbar navbar-light" style="background-color: #ffffff; border-color:#EAECEE">
                     <ul class="nav navbar-nav" style="display:flex;flex-direction:row">
                         <li>
@@ -46,7 +46,7 @@
                 </nav>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="row">
                 @foreach($user->attending_courses as $course)
                 <div class="col-md-3 ">
