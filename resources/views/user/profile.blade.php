@@ -134,7 +134,7 @@
           <div class="row">
             <div class="col-md-8">
               <div class="navbar navbar-light" style="background-color: #ffffff; border-color:#EAECEE">
-                <ul class="nav navbar-nav">
+                <ul style="display:flex;flex-direction:row" class="nav navbar-nav">
                   <li><a href="{{url('/user/profile')}}">الملف الشخصي</a></li>
                    <li><a href="{{url('/user/courses')}}">الدورات</a></li>
                     <li><a href="{{url('/user/messages')}}">الرسائل</a></li>
