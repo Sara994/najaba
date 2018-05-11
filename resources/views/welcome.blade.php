@@ -148,44 +148,51 @@
             <div class="carousel-inner">
                 <div class="item active">
                     @foreach(App\Course::orderBy('created_at', 'desc')->limit(3)->get() as $course)
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="{{url('course/'.$course->id)}}">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <div class="panel-header">
-                                    @if($course->photo)
-                                        <img style="max-width:100%;max-height:100%" src="{{url($course->photo)}}" alt="silder1" class="img-responsive">
-                                    @else
-                                        <img style="max-width:100%;max-height:100%" src="{{asset('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
-                                    @endif
+                                    <img src="{{$course->photo ? url($course->photo):url('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
                                 </div>
                                 <div class="panel-body text-center">
-                                    <p> {{$course->name}}</p>
+                                        <a href="{{url('/course/' . $course->id)}}"><p>{{$course->name}}</p></a>
+                                        <a href="{{url('/user/' . $course->trainer->id)}}"> <p>{{$course->trainer->name}}</p></a>
+                                    <p>عدد المقاعد :{{$course->number_of_seats}}</p>
+                                    @php $rating = $course->rating() @endphp
+                                    <div class="rank ">
+                                        <span class="fa fa-star {{$rating > 0 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 1 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 2 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 3 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 4 ? 'checked':''}}"></span>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-
+                        </div>
                     @endforeach
                 </div>
 
                 <div class="item">
                     @foreach(App\Course::orderBy('created_at', 'desc')->limit(3)->offset(3)->get() as $course)
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="{{url('course/'.$course->id)}}">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="panel panel-default">
                                 <div class="panel-header">
-                                    @if($course->photo)
-                                        <img style="max-width:100%;max-height:100%" src="{{url($course->photo)}}" alt="silder1" class="img-responsive">
-                                    @else
-                                        <img style="max-width:100%;max-height:100%" src="{{asset('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
-                                    @endif
+                                    <img src="{{$course->photo ? url($course->photo):url('images/placeholder.gif')}}" alt="silder1" class="img-responsive">
                                 </div>
                                 <div class="panel-body text-center">
-                                    <p>{{$course->name}}</p>
+                                        <a href="{{url('/course/' . $course->id)}}"><p>{{$course->name}}</p></a>
+                                        <a href="{{url('/user/' . $course->trainer->id)}}"> <p>{{$course->trainer->name}}</p></a>
+                                    <p>عدد المقاعد :{{$course->number_of_seats}}</p>
+                                    @php $rating = $course->rating() @endphp
+                                    <div class="rank ">
+                                        <span class="fa fa-star {{$rating > 0 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 1 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 2 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 3 ? 'checked':''}}"></span>
+                                        <span class="fa fa-star {{$rating > 4 ? 'checked':''}}"></span>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
+                        </div>
                     @endforeach
                 </div>
 
