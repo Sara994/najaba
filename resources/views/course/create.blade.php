@@ -1,7 +1,7 @@
 {{-- @extends('layouts.app') --}}
-@extends('user')
+@extends('layouts.app')
 {{-- @section('content') --}}
-@section('user_content')
+@section('content')
 
 
 <section class="courseform">
