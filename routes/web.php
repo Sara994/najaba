@@ -44,6 +44,7 @@ Route::group(['prefix'=>'course'],function(){
         return redirect('course/'.$courseId);
     });
     Route::get('/{id}', 'CourseController@view');
+    Route::get('/{id}/delete', 'CourseController@delete');
 });
 
 Route::group(['prefix'=>'user'],function(){

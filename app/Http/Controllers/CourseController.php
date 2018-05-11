@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 use App\CourseFile;
+use App\StudentCourse;
+use App\Cmment;
+use App\Message;
 use Auth;
+use Log;
 
 class CourseController extends Controller{
     /**
@@ -54,6 +58,20 @@ class CourseController extends Controller{
 
     function messageAllStudents($courseId,Request $request){
         $course = Course::find($courseId);
+    }
+
+    function delete($courseId){
+        $course = Course::find($courseId);
+        Log::info($course->trainer);
+        Log::info(Auth::user()->id);
+        if(Auth::user()->id == $course->trainer->id){
+            StudentCourse::where('course_id',$courseId)->delete();
+            Cmment::where('course_id',$courseId)->delete();
+            Message::where('course_id',$courseId)->delete();
+            CourseFile::where('course_id',$courseId)->delete();
+            Course::where('id',$courseId)->delete();
+        }
+        return redirect('user/courses');
     }
 
      /**

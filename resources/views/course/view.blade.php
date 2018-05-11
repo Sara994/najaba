@@ -3,7 +3,12 @@
 
 <section class="header-course">
     <div class="ccontainer">
-        <div class="row">
+        <div class="row" style="position:relative">
+            @if( Auth::user()->id == $course->trainer->id )
+            <div style="position:absolute;left:10%;top:0px;z-index:1000">
+                <a href="{{url('course/' . $course->id . '/delete')}}" class="btn btn-danger">حذف</a>
+            </div>
+            @endif
             <div class="col-md-12">
                 @if($course->photo)
                     <img src="{{url($course->photo)}}" class="img-responsive center-block img-circle" width="200px" height="200px">
