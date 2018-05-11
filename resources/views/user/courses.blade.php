@@ -2,13 +2,6 @@
 @section('content')
 
 
-
-
-
-
-@if(Auth::user()->role == 'STUDENT')
-
-
 <div class="edit-4">
     <div class="col-md-11">
         <img src="{{$user->profile_picture ? url($user->profile_picture): asset('images/man.png')}}" class="img-responsive center-block" width="100px" height="100px">
@@ -21,10 +14,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 <section >
@@ -48,7 +37,9 @@
         </div>
         <div class="col-md-12">
             <div class="row">
-                @foreach($user->attending_courses as $course)
+
+                @php $mycourses = $user->role == "STUDENT" ? $user->attending_courses: $user->courses; @endphp
+                @foreach($mycourses as $course)
                 <div class="col-md-3 ">
                     <div class="panel panel-default">
                         <div class="panel-header">
@@ -82,27 +73,5 @@
     <br>
     <br>
 </section>
-@endif
 
-@if(Auth::user()->role == 'TRAINER')
-    @foreach($user->courses() as $course)
-    <div class="col-md-4">
-        
-        <a href="{{url('course/' . $course->id )}}">
-            <div class="panel panel-default">
-            <div class="panel-header">
-                @if($course->photo)
-                    <img src="{{ url($course->photo) }}" alt="silder1" class="img-responsive">
-                @else
-                    <img src="{{ asset('images/placeholder.gif') }}" alt="silder1" class="img-responsive">
-                @endif
-            </div>
-            <div class="panel-body text-center">
-                <p>{{$course->name}}</p>
-            </div>
-            </div>
-        </a>
-    </div>
-    @endforeach
-@endif
 @endsection
