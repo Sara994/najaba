@@ -15,9 +15,9 @@ class Message extends Model{
         return $this->hasOne('App\Course', 'course_id', 'id');
     }
     public function from(){
-        return $this->hasOne('App\User', 'from_id', 'id');
+        return $this->hasOne('App\User', 'id', 'from_id');
     }
     public function to(){
-        return $this->hasOne('App\User', 'to_id', 'id');
+        return $this->hasOne('App\User', 'id', 'to_id');
     }
 }

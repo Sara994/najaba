@@ -40,6 +40,11 @@
                             @if(isset($message))
                                 <div class="panel-heading">
                                     {{$message->title}}
+
+                                    <span style="float:left">
+                                        @php $sender = $message->from->id == Auth::user()->id ? $message->to: $message->from @endphp
+                                        <a href="{{url('user/' . $sender->id)}}"> {{$sender->name}}</a>
+                                    </span>
                                 </div>
                                 <div class="panel-body">
                                     {!!html_entity_decode($message->content)!!}
@@ -67,8 +72,12 @@
                         <div class="panel-heading">
                             <span>الرسائل</span>
                             @foreach($user->messages() as $msg)
+                                @php $sender = $msg->from->id == Auth::user()->id ? $msg->to: $msg->from @endphp
+
                                 <div class="list-group-item">
                                     <a href="{{url('user/messages/'.$msg->id)}}">{{$msg->title}}</a>
+
+                                    <div><sub><a href="{{url('user/' . $sender->id)}}"> {{$sender->name}}</a></sub></div>
                                 </div>
                             @endforeach
                             <div>
