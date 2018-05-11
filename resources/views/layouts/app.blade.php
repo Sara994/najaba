@@ -44,7 +44,7 @@
     <script type="text/javascript" src="{{ asset('/js/custom.js') }}"></script>
     {{-- <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> --}}
 </head>
-<body style="display:flex;flex-direction:column;min-height:100vh">
+<body class="body" style="display:flex;flex-direction:column;min-height:100vh">
     <header>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
