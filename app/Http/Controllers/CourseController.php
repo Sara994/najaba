@@ -34,6 +34,22 @@ class CourseController extends Controller{
         return redirect("user/courses");
     }
 
+    function rate(Request $request ){
+        $course_id = $request->course_id;
+        $rating = $request->rating;
+        $user_id = Auth::user()->id;
+
+        $student_course = StudentCourse::where('student_id',$user_id)->where('course_id',$course_id)->first();
+        if(is_null($student_course)){
+            return json_encode(['success'=>false]);
+
+        }else{
+            $student_course->update(['rating'=>$rating]);
+        }
+        
+        return json_encode(['success'=>true]);
+    }
+
     function edit($courseId,Request $request ){
         $course = Course::find($courseId);
         if(Auth::user()->id == $course->trainer->id){

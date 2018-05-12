@@ -52,6 +52,7 @@ Route::group(['prefix'=>'course'],function(){
         return view('course/edit',['id'=>Auth::user()->id, 'course'=>$course]);
     })->middleware('auth');
     Route::post('/{id}/edit','CourseController@edit')->middleware('auth');
+    Route::post('/{id}/rate','CourseController@rate')->middleware('auth');
     Route::get('/{id}/archieve','CourseController@archieve')->middleware('auth');
 });
 

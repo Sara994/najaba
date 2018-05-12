@@ -624,3 +624,87 @@ ima-back {
     padding: 15px;
     border: 1px solid #dcecf5;
 }
+
+.single-rating {
+    margin: 1em 0 1.5em;
+}
+.starRating:not(old) {
+    display: inline-block;
+    height: 18px;
+	width:100px;
+    overflow: hidden;
+	vertical-align: middle;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label {
+    float: right;
+    background: url(/images/star.png);
+    background-size: contain;
+	margin-right: 2px;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 18px;
+  height          : 18px;
+  background      : url(/images/star1.png);
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  -moz-opacity : 1;
+  opacity : 1;
+}
+
+
+
+
+
+
+
+.staticStarRating:not(old) {
+    display: inline-block;
+    height: 18px;
+	width:100px;
+    overflow: hidden;
+	vertical-align: middle;
+}
+
+.staticStarRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.staticStarRating:not(old) > label {
+    float: right;
+    background: url(/img/star.png);
+    background-size: contain;
+	margin-right: 2px;
+}
+
+.staticStarRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 18px;
+  height          : 18px;
+  background      : url(/img/star1.png);
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+
+.staticStarRating > :checked ~ label:before{
+  -moz-opacity : 1;
+  opacity : 1;
+}

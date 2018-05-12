@@ -221,3 +221,21 @@ $('.carousel[data-type="multi"] .item').each(function(){
 });
 
 */
+
+$(document).ready(function(){
+  $('[data-id]').click(function(e){
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var val = $(e.currentTarget).attr('data-id');
+    $(e.currentTarget.parentNode)
+        .find('input[data-id=' + val + ']')
+        .first().attr('checked',true);
+    var form = $(e.currentTarget).parents('form:first');
+    var course_id = form.find('input[name="course_id"]')[0].value;
+    var rating = val.slice(6)
+    $.post('/course/'+course_id+'/rate',{
+        _token:CSRF_TOKEN,
+        course_id:course_id,
+        rating:rating
+    });
+  });
+})
