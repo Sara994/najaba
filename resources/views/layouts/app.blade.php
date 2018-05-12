@@ -141,12 +141,11 @@
                     <h4><a href="{{url('contactus')}}">تواصل معنا </a></h4>
                     <h4><a href="{{url('faq')}}">اسئلة الشائعة </a></h4>
                 </div>
-            
             </div>
             <div class="col-md-4">
                 <div class="scoil">
                     <h3>تابعونا على : </h3>
-                    <ul>
+                    <ul style="margin-top:0px">
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fab fa-snapchat"></i></a></li>
