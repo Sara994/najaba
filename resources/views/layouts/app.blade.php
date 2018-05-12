@@ -137,8 +137,9 @@
             <div class="row">
             <div class="col-md-4 ">
                 <div class="links">
-                <h4><a href="{{url('contactus')}}">تواصل معنا </a></h4>
-                <h4><a href="{{url('faq')}}">اسئلة الشائعة </a></h4>
+                    <h3>روابط الموقع : </h3>
+                    <h4><a href="{{url('contactus')}}">تواصل معنا </a></h4>
+                    <h4><a href="{{url('faq')}}">اسئلة الشائعة </a></h4>
                 </div>
             
             </div>
