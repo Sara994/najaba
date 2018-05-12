@@ -20,6 +20,6 @@ return [
     'intro_video'=>'فيديو عرض عن الدورة',
     'content'=>'المحتوى',
     'add_new_course'=>'إضافة دورة جديدة',
-    'student'=>'طالب',
+    'student'=>'متدرب',
     'trainer'=>'مدرب'
 ];
