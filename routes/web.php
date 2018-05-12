@@ -44,6 +44,7 @@ Route::group(['prefix'=>'course'],function(){
         ]);
         return redirect('course/'.$courseId);
     });
+    Route::get('/others',function(){return view('all_courses');});
     Route::get('/{id}', 'CourseController@view');
     Route::get('/{id}/delete', 'CourseController@delete')->middleware('auth');
     Route::get('/{id}/edit', function($courseId){

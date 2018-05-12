@@ -59,7 +59,6 @@
                                 @if(Auth::user() && Auth::user()->role == 'TRAINER')
                                 <li><a href="/course/create">{{__('main.add_new_course')}}</a></li>
                                 @endif
-                                <li><a href="{{url('/course/latest')}}">دورات جديدة</a></li>
                                 <li><a href="{{url('/course/category/1')}}">التربية والتعليم </a></li>
                                 <li><a href="{{url('/course/category/2')}}">العلوم</a></li>
                                 <li><a href="{{url('/course/category/3')}}">التقنية والتكنولوجيا </a></li>
@@ -69,6 +68,8 @@
                                 <li><a href="{{url('/course/category/7')}}">العلوم الاجتماعية </a></li>
                                 <li><a href="{{url('/course/category/8')}}">الاقتصاد والادارة </a></li>
                                 <li><a href="{{url('/course/category/9')}}">علوم الشريعة </a></li>
+                                <li><a href="{{url('/course/others')}}">أخرى</a></li>
+
                             </ul>
                         </li>
                         <!-- <li><a href="#">تصنيف</a></li>-->
