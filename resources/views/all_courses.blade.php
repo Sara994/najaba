@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="item">
-                        @foreach(App\Course::whereNull('content')->orWhere('content','like','')->orderBy('created_at', 'desc')->limit(3)->offset(3)->get() as $course)
+                        @foreach(App\Course::whereNull('content')->orWhere('content','like',' ')->orWhere('content','like','')->orderBy('created_at', 'desc')->limit(3)->offset(3)->get() as $course)
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="panel panel-default">
                                     <div class="panel-header">
