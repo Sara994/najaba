@@ -2,7 +2,7 @@
 
 @section('content')
     
-@php $upcoming_courses = App\Course::whereNull('content')->orWhere('content','like',' ')->orderBy('created_at', 'desc')->limit(3)->get() @endphp
+@php $upcoming_courses = App\Course::whereNull('content')->orWhere('content','')->orderBy('created_at', 'desc')->limit(3)->get() @endphp
 
 @if(count($upcoming_courses) > 0)
     <section class="row">
